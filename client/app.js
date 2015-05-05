@@ -7,6 +7,13 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
             if(response.status !== 200){
                 throw new Error("failed to fetch cats from the api");
             }
+            $scope.cat = {};
+            $scope.cats = response.data;
+            return response.data;
         })
-    }
-}])
+    };
+    $scope.add = function(cat){
+        return $http.post("/add", cat).then(fetchCats);
+    };
+    fetchCats();
+}]);
