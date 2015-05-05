@@ -8,6 +8,7 @@ module.exports = function(grunt) {
             build: {
                 src: "client/app.js",
                 dest: "server/public/assets/scripts/app.min.js",
+
             }
         },
         copy: {
@@ -27,3 +28,4 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.registerTask("default", ["copy", "uglify"]);
 };
+

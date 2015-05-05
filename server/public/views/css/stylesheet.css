@@ -1,0 +1,18 @@
+.well {
+    background-color: #a59a98;
+}
+body {
+    background-color: #323232;
+}
+li {
+    list-style-type: none;
+    color: #7F4426;
+    background-color: #323232;
+}
+#header1 {
+    color: #ff5500;
+}
+.catName {
+    font-size: 20px;
+    color: #7f7f7f;
+}
