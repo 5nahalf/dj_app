@@ -1,4 +1,8 @@
 var express = require("express");
+var bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use("/", index);
+module.exports = app;
 var app = express();
 var index = require("./routes/index");
 
