@@ -12,6 +12,13 @@ router.post("/add", function(request, response, next){
         //next();
     });
 });
+router.post('/remove', function(request, response, next) {
+    var kitty = Cat.find({name: request.body.name});
+    kitty.remove(function(err) {
+        if (err) console.log('Error when removing cat: %s', err);
+        //next();
+    });
+});
 router.get("/cats", function(request, response, next){
     return Cat.find({}).exec(function(err, cats){
         if(err) throw new Error(err);

@@ -15,5 +15,8 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     $scope.add = function(cat){
         return $http.post("/add", cat).then(fetchCats);
     };
+    $scope.remove = function(cat) {
+        return $http.post('/remove', cat).then(fetchCats);
+    };
     fetchCats();
 }]);

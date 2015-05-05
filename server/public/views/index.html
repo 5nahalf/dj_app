@@ -21,7 +21,10 @@
             </div>
             <h4 class="text-center">Cats</h4>
             <ul class="well">
-                <li class="text-center" ng-repeat="cat in cats">{{cat.name}}</li>
+                <li ng-repeat="cat in cats">
+                    {{cat.name}}
+                    <button ng-click="remove(cat)" class="btn btn-primary btn-sm btn-remove-cat">X</button>
+                </li>
             </ul>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
