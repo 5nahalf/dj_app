@@ -1,7 +1,12 @@
 var express = require("express");
 var router = express.Router();
-var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/basic_walking_skeleton");
+var mongoose = require('mongoose');
+// We use mongodb-uri (install it as a dependency with NPM) to format the URI
+var uriUtil = require('mongodb-uri');
+// I got this from Mongolab's GUI, yours will be different. I created a DB user "client" with pw of "client" for the purposes here, this definitely isn't secure.
+var uri = 'mongodb://5nahalf:LornaWyatt651@ds031822.mongolab.com:31822/heroku_app36592742';
+// Finally, make the connection with the URI formatted for mongoose
+mongoose.connect(uriUtil.formatMongoose(uri));
 var Cat = mongoose.model("cat", {name:String});
 var path =require("path");
 router.post("/add", function(request, response, next){
