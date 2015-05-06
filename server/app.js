@@ -1,6 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var uri = 'mongodb://client:client@ds031922.mongolab.com:31922/heroku_app36595117';
 var app = express();
 var index = require("./routes/index");
 app.use(bodyParser.json());
