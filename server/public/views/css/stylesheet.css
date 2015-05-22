@@ -1,5 +1,7 @@
 .well {
     background-color: #DBDED3;
+    font-family: 'Fredericka the Great', cursive;
+
 }
 body {
     background-color: #F4F7EB;
@@ -9,14 +11,22 @@ li {
     list-style-type: none;
     color: #373835;
     background-color: #DBDED3;
+    font-family: 'Fredericka the Great', cursive;
+
 }
 #header1 {
     color: #373835;
+    font-family: 'Fredericka the Great', cursive;
+
 }
 .catName {
     font-size: 20px;
     color: #373835;
+    font-family: 'Fredericka the Great', cursive;
+
 }
 h4 {
     color: #373835;
+    font-family: 'Fredericka the Great', cursive;
+
 }
