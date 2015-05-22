@@ -1,21 +1,21 @@
 .well {
-    background-color: #a59a98;
+    background-color: #D2B0FF;
 }
 body {
-    background-color: #323232;
+    background-color: #9E84BF;
 }
 li {
     list-style-type: none;
-    color: #7F4426;
+    color: #352C40;
     background-color: #323232;
 }
 #header1 {
-    color: #ff5500;
+    color: #BD9FE5;
 }
 .catName {
     font-size: 20px;
-    color: #7f7f7f;
+    color: #352C40;
 }
 h4 {
-    color: #7f7f7f;
+    color: #352C40;
 }
