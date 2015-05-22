@@ -30,3 +30,48 @@ h4 {
     font-family: 'Fredericka the Great', cursive;
 
 }
+.btn-wed {
+    color: #373835;
+    background-color: #F4F7EB;
+    border-color: #F4F7EB;
+}
+
+.btn-wed:hover,
+.btn-wed:focus,
+.btn-wed:active,
+.btn-wed.active,
+.open .dropdown-toggle.btn-wed {
+    color: #373835;
+    background-color: #767872;
+    border-color: #F4F7EB;
+}
+
+.btn-wed:active,
+.btn-wed.active,
+.open .dropdown-toggle.btn-wed {
+    background-image: none;
+}
+
+.btn-wed.disabled,
+.btn-wed[disabled],
+fieldset[disabled] .btn-wed,
+.btn-wed.disabled:hover,
+.btn-wed[disabled]:hover,
+fieldset[disabled] .btn-wed:hover,
+.btn-wed.disabled:focus,
+.btn-wed[disabled]:focus,
+fieldset[disabled] .btn-wed:focus,
+.btn-wed.disabled:active,
+.btn-wed[disabled]:active,
+fieldset[disabled] .btn-wed:active,
+.btn-wed.disabled.active,
+.btn-wed[disabled].active,
+fieldset[disabled] .btn-wed.active {
+    background-color: #F4F7EB;
+    border-color: #F4F7EB;
+}
+
+.btn-wed .badge {
+    color: #F4F7EB;
+    background-color: #373835;
+}
