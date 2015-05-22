@@ -32,7 +32,7 @@ h4 {
 }
 .btn-wed {
     color: #373835;
-    background-color: #F4F7EB;
+    background-color: #B5B8AE;
     border-color: #F4F7EB;
 }
 
@@ -67,11 +67,11 @@ fieldset[disabled] .btn-wed:active,
 .btn-wed.disabled.active,
 .btn-wed[disabled].active,
 fieldset[disabled] .btn-wed.active {
-    background-color: #F4F7EB;
+    background-color: #B5B8AE;
     border-color: #F4F7EB;
 }
 
 .btn-wed .badge {
-    color: #F4F7EB;
+    color: #B5B8AE;
     background-color: #373835;
 }
