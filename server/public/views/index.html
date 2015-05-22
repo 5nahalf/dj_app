@@ -18,16 +18,17 @@
                 <p class="catName" ng-hide="cat.name">Enter the song you want to hear.</p>
                 <form novalidate>
                     <input type="text" ng-model="cat.name"><br />
-                    <button class="btn" type="submit" ng-click="add(cat)" value="Save">Request!</button>
+                    <button class="btn btn-info" type="submit" ng-click="add(cat)" value="Save">Request!</button>
                 </form>
             </div>
             <h4 class="text-center">Songs</h4>
             <ul class="well">
                 <li ng-repeat="cat in cats">
-                    <button ng-click="remove(cat)" class="btn btn-sm btn-remove-cat">{{cat.name}}</button>
+                    <p>{{cat.name}}</p>
                 </li>
             </ul>
         </div>
+        <a href="views/admin.html">admin</a>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </body>
