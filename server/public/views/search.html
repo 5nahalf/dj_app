@@ -1,162 +1,30 @@
-<!doctype html>
-<html ng-app="Demo" ng-controller="AppController">
-<head>
-    <meta charset="utf-8" />
-
-    <title>
-        Filter vs. ngHide With ngRepeat In AngularJS
-    </title>
-
-    <style type="text/css">
-
-        form, p, li, input, button {
-            font-size: 15px ;
-        }
-
-        li {
-            border: 1px dotted #FF9900 ;
-            margin: 0px 0px 7px 0px ;
-            padding: 5px 5px 5px 5px ;
-        }
-
-    </style>
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>DJ request</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/views/css/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<h1>
-    Filter vs. ngHide With ngRepeat In AngularJS
-</h1>
-
-<p>
-    You have {{ friends.length }} friends!
-</p>
-
-
-<!-- BEGIN: Search Filter. -->
-<form>
-
-    Filter:
-
-    <input type="text" ng-model="filters.name" size="20" />
-
-    <button type="button" ng-click="clearFilter()">
-        Clear Filter
-    </button>
-
-</form>
-<!-- END: Search Filter. -->
-
-
-<!-- BEGIN: List Of Friends. -->
-<ul>
-
-    <li
-            ng-repeat="friend in friends | filter: filters.name"
-            bn-line-item>
-
-        {{ friend.name }}
-
-    </li>
-
-</ul>
-<!-- END: List Of Friends. -->
-
-
-
-<!-- Load jQuery and AngularJS from the CDN. -->
-<script
-        type="text/javascript"
-        src="//code.jquery.com/jquery-2.0.0.min.js">
-</script>
-<script
-        type="text/javascript"
-        src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js">
-</script>
-<script type="text/javascript">
-
-
-    // Create an application module for our demo.
-    var app = angular.module( "Demo", [] );
-
-
-    // -------------------------------------------------- //
-    // -------------------------------------------------- //
-
-
-    // I control the root of the application.
-    app.controller(
-            "AppController",
-            function( $scope ) {
-
-                // Set up the default filters.
-                $scope.filters = {
-                    name: ""
-                };
-
-                // Set up the default collection of friends.
-                $scope.friends = [
-                    {
-                        id: 1,
-                        name: "Vin Diesel"
-                    },
-                    {
-                        id: 2,
-                        name: "Helena Bonham Carter"
-                    },
-                    {
-                        id: 3,
-                        name: "Lori Petty"
-                    },
-                    {
-                        id: 4,
-                        name: "Jason Statham"
-                    }
-                ];
-
-
-                // ---
-                // PUBLIC METHODS.
-                // ---
-
-
-                // I clear the search filter.
-                $scope.clearFilter = function() {
-
-                    $scope.filters.name = "";
-
-                };
-
-            }
-    );
-
-
-    // -------------------------------------------------- //
-    // -------------------------------------------------- //
-
-
-    // I log the linking of the line item.
-    app.directive(
-            "bnLineItem",
-            function() {
-
-                // I bind the UI events to the scope.
-                function link( $scope, element, attributes ) {
-
-                    console.log( "Linked:", $scope.friend.name );
-
-                }
-
-
-                // Return the directive configuration.
-                return({
-                    link: link,
-                    restrict: "A"
-                });
-
-            }
-    );
-
-</script>
-
+<div class="container-fluid" ng-controller="DemoController">
+    <div class="well text-center">
+        <h1 id="header1">Search</h1>
+        <p class="catName" ng-hide="cat.name">Search for a song by name, artist, or lyrics.</p>
+        <label>Search: <input ng-model="searchText"></label>
+        <table id="searchTextResults">
+            <tr ng-repeat="music in musics | filter:searchText">
+                <td>{{music.name}}</td>
+                <td>{{music.song}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<a href="views/admin.html">_</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="/vendor/angular/angular.min.js" type="text/javascript"></script>
+<script src="/assets/scripts/app.min.js" type="text/javascript"></script>
 </body>
 </html>
