@@ -14,8 +14,8 @@
                 <p>Enter your dance request.</p>
                 <label>Search: <input ng-model="searchText"></label>
                 <table id="searchTextResults">
-                    <tr ng-repeat="music in musics | filter:searchText">
-                        <td>{{music.name}}</td>
+                    <tr ng-repeat="cat in cats | filter:searchText">
+                        <td>{{cat.name}}</td>
                         <td>{{music.song}}</td>
                     </tr>
                 </table>
