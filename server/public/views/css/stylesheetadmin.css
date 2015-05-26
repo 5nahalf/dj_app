@@ -63,3 +63,6 @@ li.active a, li.active a:hover {
     width: 400px;
     height: 500px;
 }
+.request-list {
+    display: inline-block;
+}

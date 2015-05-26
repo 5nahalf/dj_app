@@ -44,11 +44,10 @@
                 <p>Lyrics:</p><textarea rows="50" cols="100" ng-model="music.lyrics" class="requestLyrics"></textarea><br />
                 <button class="btn btn-wed" type="submit" ng-click="add(music)" value="Save">Add song</button>
                 <ul>
-                    <li ng-repeat="music in musics">
+                    <li class="request-list" ng-repeat="music in musics">
                         <button ng-click="remove(music)" class="btn btn-sm btn-remove-cat">Remove</button>
                         <p>{{music.name}}</p>
                         <p>{{music.song}}</p>
-                        <p>{{music.lyrics}}</p>
                     </li>
                 </ul>
             </form>
