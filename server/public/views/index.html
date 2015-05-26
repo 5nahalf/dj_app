@@ -14,8 +14,7 @@
         <div class="container-fluid" ng-controller="IndexController">
             <div class="well text-center">
                 <h1 id="header1">Wedding Party Name</h1>
-                <p class="catName" ng-show="cat.name">Your request is: {{cat.name}}</p>
-                <p class="catName" ng-hide="cat.name">Enter your dance request.</p>
+                <p>Enter your dance request.</p>
                 <label>Search: <input ng-model="searchText"></label>
                 <table id="searchTextResults">
                     <tr ng-repeat="music in musics | filter:searchText">
