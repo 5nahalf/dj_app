@@ -13,12 +13,10 @@
         <h1 id="header1">Search</h1>
         <p class="catName" ng-hide="cat.name">Search for a song by name, artist, or lyrics.</p>
         <label>Search: <input ng-model="searchText"></label>
-        <table id="searchTextResults" ng-show="(filteredData = (music.name | filter:searchText)) && filteredData.length >= 3 && search && search.length >= 2">            <tr ng-repeat="music in musics | filter:searchText">
-
-
-            <tr ng-repeat="music in filteredData">
-                <td>{{music.name}}</td>
-                <td>{{music.song}}</td>
+        <table id="searchTextResults">
+            <tr ng-repeat="music in musics | filter:searchText">
+                <p>{{music.name}}</p>
+                <p>{{music.song}}</p>
             </tr>
         </table>
     </div>
