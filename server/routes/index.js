@@ -32,14 +32,9 @@ router.get("/musicdata", function(request, response, next){
     });
 });
 
-router.get("/*", function(req, res, next) {
-    console.log("ayo for yayo");
-    var file = req.params[0] || "views/index.html";
-    res.sendFile(path.join(__dirname, "../public", file));
-    //next();
-});
 
-//fasdfsdfasdfasd
+//request side
+
 router.post("/add", function(request, response, next){
     var kitty = new Cat({name: request.body.name});
     kitty.save(function(err){

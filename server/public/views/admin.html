@@ -45,7 +45,10 @@
                 <button class="btn btn-wed" type="submit" ng-click="add(data)" value="Save">Add song</button>
                 <ul>
                     <li ng-repeat="music in musics">
-                        <button ng-click="remove(data)" class="btn btn-sm btn-remove-cat">{{data.name}}</button>
+                        <button ng-click="remove(data)" class="btn btn-sm btn-remove-cat">Remove</button>
+                        <p>{{data.name}}</p>
+                        <p>{{data.song}}</p>
+                        <p>{{data.lyrics}}</p>
                     </li>
                 </ul>
             </form>
