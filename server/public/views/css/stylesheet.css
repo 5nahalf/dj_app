@@ -75,3 +75,16 @@ fieldset[disabled] .btn-wed.active {
     color: #B5B8AE;
     background-color: #373835;
 }
+.tab-content {
+    padding:15px;
+    border-radius:3px;
+    box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+    background:#fff;
+}
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display:block;
+}
