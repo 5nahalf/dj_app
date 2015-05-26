@@ -18,10 +18,11 @@
     <div class="tab-content">
         <div id="tab1" class="tab active">
             <div ng-controller="IndexController">
-                <h4>Songs</h4>
+                <h4>Requests</h4>
                 <ul>
                     <li ng-repeat="cat in cats">
-                        <button ng-click="remove(cat)" class="btn btn-sm btn-remove-cat">{{cat.name}}</button>
+                        <button ng-click="remove(cat)" class="btn btn-md btn-remove-cat">Remove Song</button>
+                        <p>{{cat.name}}</p>
                     </li>
                 </ul>
             </div>
