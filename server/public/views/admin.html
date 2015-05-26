@@ -43,6 +43,11 @@
                 <p>Song Name:</p><input type="text" ng-model="data.song"><br />
                 <p>Lyrics:</p><input type="text" ng-model="data.lyrics"><br />
                 <button class="btn btn-wed" type="submit" ng-click="add(data)" value="Save">Add song</button>
+                <ul>
+                    <li ng-repeat="music in musics">
+                        <button ng-click="remove(data)" class="btn btn-sm btn-remove-cat">{{data.name}}</button>
+                    </li>
+                </ul>
             </form>
         </div>
     </div>
