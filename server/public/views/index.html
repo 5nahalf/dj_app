@@ -8,14 +8,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class="container-fluid" ng-controller="IndexController">
+        <div class="container-fluid" ng-controller="DataController">
             <div class="well text-center">
                 <h1 id="header1">Wedding Party Name</h1>
                 <p>Enter your dance request.</p>
                 <label>Search: <input ng-model="searchText"></label>
                 <table id="searchTextResults">
-                    <tr ng-repeat="cat in cats | filter:searchText">
-                        <td>{{cat.name}}</td>
+                    <tr ng-repeat="music in musics | filter:searchText">
+                        <td>{{music.name}}</td>
                         <td>{{music.song}}</td>
                     </tr>
                 </table>
