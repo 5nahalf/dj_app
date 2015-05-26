@@ -9,14 +9,43 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 <body>
-<div ng-controller="IndexController">
-    <h4>Songs</h4>
-    <ul>
-        <li ng-repeat="cat in cats">
-            <button ng-click="remove(cat)" class="btn btn-sm btn-remove-cat">{{cat.name}}</button>
-        </li>
+<div class="tabs">
+    <ul class="tab-links">
+        <li class="active"><a href="#tab1">Home</a></li>
+        <li><a href="#tab2">Style</a></li>
+        <li><a href="#tab3">Request</a></li>
+        <li><a href="#tab4">Database</a></li>
     </ul>
+
+    <div class="tab-content">
+        <div id="tab1" class="tab active">
+            <div ng-controller="IndexController">
+                <h4>Songs</h4>
+                <ul>
+                    <li ng-repeat="cat in cats">
+                        <button ng-click="remove(cat)" class="btn btn-sm btn-remove-cat">{{cat.name}}</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="tab2" class="tab">
+            <p>Tab #2 content goes here!</p>
+            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis. In hac habitasse platea dictumst. Ut euismod tempus hendrerit. Morbi ut adipiscing nisi. Etiam rutrum sodales gravida! Aliquam tellus orci, iaculis vel.</p>
+        </div>
+
+        <div id="tab3" class="tab">
+            <p>Tab #3 content goes here!</p>
+            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum ri.</p>
+        </div>
+
+        <div id="tab4" class="tab">
+            <p>Tab #4 content goes here!</p>
+            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis. In hac habitasse platea dictumst. Ut euismod tempus hendrerit. Morbi ut adipiscing nisi. Etiam rutrum sodales gravida! Aliquam tellus orci, iaculis vel.</p>
+        </div>
+    </div>
 </div>
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
