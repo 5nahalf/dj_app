@@ -7,30 +7,30 @@ mongoose.connect(uriUtil.formatMongoose(uri));
 
 var path =require("path");
 var Cat = mongoose.model("cat", {name:String});
-var Song = mongoose.model("data", {name:String, song:String, lyrics:String});
+var Song = mongoose.model("music", {name:String, song:String, lyrics:String});
 
-//router.post("/add", function(request, response, next){
-//    var music = new Song({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics});
-//    music.save(function(err){
-//        if(err) console.log("meow %s", err);
-//        response.send(music.toJSON());
-//        //next();
-//    });
-//});
-//router.post('/remove', function(request, response, next) {
-//    var music = Song.find({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics});
-//    music.remove(function(err) {
-//        if (err) console.log('Error when removing cat: %s', err);
-//        //next();
-//    });
-//});
-//router.get("/musicdata", function(request, response, next){
-//    return Song.find({}).exec(function(err, musics){
-//        if(err) throw new Error(err);
-//        response.send(JSON.stringify(musics));
-//        //next();
-//    });
-//});
+router.post("/add", function(request, response, next){
+    var music = new Song({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics});
+    music.save(function(err){
+        if(err) console.log("meow %s", err);
+        response.send(music.toJSON());
+        //next();
+    });
+});
+router.post('/remove', function(request, response, next) {
+    var music = Song.find({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics});
+    music.remove(function(err) {
+        if (err) console.log('Error when removing cat: %s', err);
+        //next();
+    });
+});
+router.get("/musicdata", function(request, response, next){
+    return Song.find({}).exec(function(err, musics){
+        if(err) throw new Error(err);
+        response.send(JSON.stringify(musics));
+        //next();
+    });
+});
 
 
 //request side

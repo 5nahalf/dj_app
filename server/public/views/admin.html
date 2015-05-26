@@ -42,13 +42,13 @@
                 <p>Artist:</p><input type="text" ng-model="data.name" class="requestName"><br />
                 <p>Song Name:</p><input type="text" ng-model="data.song" class="requestSong"><br />
                 <p>Lyrics:</p><textarea rows="50" cols="100" ng-model="data.lyrics" class="requestLyrics"></textarea><br />
-                <button class="btn btn-wed" type="submit" ng-click="add(data)" value="Save">Add song</button>
+                <button class="btn btn-wed" type="submit" ng-click="add(music)" value="Save">Add song</button>
                 <ul>
                     <li ng-repeat="music in musics">
-                        <button ng-click="remove(data)" class="btn btn-sm btn-remove-cat">Remove</button>
-                        <p>{{data.name}}</p>
-                        <p>{{data.song}}</p>
-                        <p>{{data.lyrics}}</p>
+                        <button ng-click="remove(music)" class="btn btn-sm btn-remove-cat">Remove</button>
+                        <p>{{music.name}}</p>
+                        <p>{{music.song}}</p>
+                        <p>{{music.lyrics}}</p>
                     </li>
                 </ul>
             </form>
