@@ -35,10 +35,10 @@ app.controller("DataController", ["$scope", "$http", function($scope, $http){
         })
     };
     $scope.add = function(data){
-        return $http.post("/add", data).then(fetchMusic);
+        return $http.post("/madd", data).then(fetchMusic);
     };
     $scope.remove = function(data) {
-        return $http.post('/remove', data).then(fetchMusic);
+        return $http.post('/mremove', data).then(fetchMusic);
     };
     fetchMusic();
 }]);
