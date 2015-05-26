@@ -46,8 +46,7 @@
                 <ul>
                     <li class="request-list" ng-repeat="music in musics">
                         <button ng-click="remove(music)" class="btn btn-sm btn-remove-cat">Remove</button>
-                        <p>{{music.name}}</p>
-                        <p>{{music.song}}</p>
+                        <p>Artist: {{music.name}} Song: {{music.song}}</p>
                     </li>
                 </ul>
             </form>
