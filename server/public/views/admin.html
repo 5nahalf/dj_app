@@ -40,9 +40,9 @@
 
         <div id="tab4" class="tab" ng-controller="DataController">
             <form novalidate>
-                <p>Artist:</p><input type="text" ng-model="data.name"><br />
-                <p>Song Name:</p><input type="text" ng-model="data.song"><br />
-                <p>Lyrics:</p><input type="text" ng-model="data.lyrics"><br />
+                <p>Artist:</p><input type="text" ng-model="data.name" class="requestName"><br />
+                <p>Song Name:</p><input type="text" ng-model="data.song" class="requestSong"><br />
+                <p>Lyrics:</p><input type="text" ng-model="data.lyrics" class="requestLyrics"><br />
                 <button class="btn btn-wed" type="submit" ng-click="add(data)" value="Save">Add song</button>
                 <ul>
                     <li ng-repeat="music in musics">

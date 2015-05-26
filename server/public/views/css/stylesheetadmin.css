@@ -53,3 +53,13 @@ li.active a, li.active a:hover {
 .tab.active {
     display:block;
 }
+.requestName {
+    width: 400px;
+}
+.requestSong {
+    width: 400px;
+}
+.requestLyrics {
+    width: 400px;
+    height: 500px;
+}
