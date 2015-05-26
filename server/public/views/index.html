@@ -16,10 +16,17 @@
                 <h1 id="header1">Wedding Party Name</h1>
                 <p class="catName" ng-show="cat.name">Your request is: {{cat.name}}</p>
                 <p class="catName" ng-hide="cat.name">Enter your dance request.</p>
-                <form novalidate>
-                    <input type="text" ng-model="cat.name"><br />
-                    <button class="btn btn-wed" type="submit" ng-click="add(cat)" value="Save">Request!</button>
-                </form>
+                <label>Search: <input ng-model="searchText"></label>
+                <table id="searchTextResults">
+                    <tr ng-repeat="music in musics | filter:searchText">
+                        <td>{{music.name}}</td>
+                        <td>{{music.song}}</td>
+                    </tr>
+                </table>
+                <!--<form novalidate>-->
+                    <!--<input type="text" ng-model="cat.name"><br />-->
+                    <!--<button class="btn btn-wed" type="submit" ng-click="add(cat)" value="Save">Request!</button>-->
+                <!--</form>-->
             </div>
             <h4 class="text-center">Current Requests</h4>
             <ul class="well">
