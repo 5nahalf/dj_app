@@ -8,18 +8,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="container-fluid" ng-controller="DataController">
-    <div class="well text-center">
-        <h1 id="header1">Search</h1>
-        <p>Search for a song by name, artist, or lyrics.</p>
-        <label>Search: <input ng-model="searchText"></label>
-        <table id="searchTextResults">
-            <tr ng-repeat="music in musics | filter:searchText">
-                <td>{{music.name}} - {{music.song}}</td>
-            </tr>
-        </table>
+<br/>
+<br/>
+<div ng-cloak ng-app="TabsApp">
+    <div class="container" ng-controller="TabManagerCtrl"> <b>Search:</b>
+        {{searchText}}
+        <ul class="sel">
+            <li class="con" ng-repeat="selItem in itemsSelectedArr">{{selItem}} <a href="javascript:void(0);" ng-click="itemSelectedDelet(selItem);">X</a>
+
+            </li>
+            <li>
+                <input type="text" ng-model="searchText" ngsearchtext="searchMe(searchText);" />
+            </li>
+        </ul>
+        <br class="clearall" />
+        <br/>
+        <div class="autocompletepanel" ng-show="itemsDisplaPanel">
+            <div ng-repeat="item in itemsArr"> <a href="javascript:void(0);" ng-click="itemSelectedData(item);">{{item}}</a>
+
+            </div>
+        </div>
+        <!-- autocomplete-->
     </div>
+    <!-- /container -->
 </div>
+<!-- /app -->
 <a href="views/admin.html">_</a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
