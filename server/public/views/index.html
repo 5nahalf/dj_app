@@ -18,7 +18,6 @@
                 <div class="container-fluid" ng-controller="IndexController">
                     <div class="well text-center">
                         <h1 id="header1">Wedding Party Name</h1>
-                        <a href="views/search.html">Browse music collection</a>
                         <p class="catName" ng-show="cat.name">Your request is: {{cat.name}}</p>
                         <p class="catName" ng-hide="cat.name">Enter your dance request.</p>
                         <form novalidate>
@@ -39,7 +38,7 @@
                     <div class="well text-center">
                         <h1 id="header1">Search</h1>
                         <p>Search for a song by name, artist, or lyrics.</p>
-                        <label>Search: <input ng-model="searchText"></label>
+                        <label><input ng-model="searchText"></label>
                         <table id="searchTextResults">
                             <ul>
                                 <li ng-repeat="music in musics | filter:searchText">
