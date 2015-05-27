@@ -43,7 +43,7 @@
                     <div id="searchTextResults">
                         <ul class="well">
                             <li ng-repeat="music in musics | filter:searchText | orderBy:'name'">
-                                <p class="text-center">{{music.name}} - {{music.song}}</p>
+                                <p class="text-center">{{music.name}} - {{music.song}} - <button class="{{music.requested}}">Request</button></p>
                             </li>
                         </ul>
                     </div>
