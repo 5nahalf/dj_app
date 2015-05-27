@@ -15,7 +15,7 @@
         <label>Search: <input ng-model="searchText"></label>
         <table id="searchTextResults">
             <tr ng-repeat="music in musics | filter:searchText">
-                <td>{{music.name}} - {{music.song}}<button class="btn btn-wed" type="submit" ng-click="add(cat)" value="Save">Request!</button></td>
+                <td>{{music.name}} - {{music.song}}</td>
             </tr>
         </table>
     </div>
