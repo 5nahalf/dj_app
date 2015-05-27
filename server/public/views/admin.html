@@ -55,7 +55,7 @@
                 </div>
                 <div id="searchTextResults">
                     <ul class="well">
-                        <li class="request-list col-md-4" ng-repeat="music in musics">
+                        <li class="request-list col-md-4" ng-repeat="music in musics | filter:searchText | orderBy:'name'">
                             <button ng-click="remove(music)" class="btn btn-danger btn-remove-cat">Remove</button>
                             <p>Artist: {{music.name}} Song: {{music.song}}</p>
                         </li>
