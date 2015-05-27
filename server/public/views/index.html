@@ -41,9 +41,11 @@
                         <p>Search for a song by name, artist, or lyrics.</p>
                         <label>Search: <input ng-model="searchText"></label>
                         <table id="searchTextResults">
-                            <tr ng-repeat="music in musics | filter:searchText">
-                                <td>{{music.name}} - {{music.song}}</td>
-                            </tr>
+                            <ul>
+                                <li ng-repeat="music in musics | filter:searchText">
+                                    <p>{{music.name}} - {{music.song}}</p>
+                                </li>
+                            </ul>
                         </table>
                     </div>
                 </div>
