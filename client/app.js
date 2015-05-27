@@ -1,4 +1,4 @@
-var app = angular.module("app", []);
+var app = angular.module("app", ['infinite-scroll']);
 app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     $scope.cat = {};
     $scope.cats = [];
@@ -42,7 +42,16 @@ app.controller("DataController", ["$scope", "$http", function($scope, $http){
     };
     fetchMusic();
 }]);
+app.controller('search', ['$scope',function($scope){
+    $scope.musics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+    $scope.loadMore = function() {
+        var last = $scope.musics[$scope.musics.length - 1];
+        for(var i = 1; i <= 10; i++) {
+            $scope.musics.push(last + i);
+        }
+    };
+}]);
 
 $(document).ready(function() {
     $('.tabs .tab-links a').on('click', function(e)  {
