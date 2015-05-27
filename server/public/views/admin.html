@@ -49,19 +49,12 @@
         </div>
         <div id="tab5" class="tab">
             <div ng-controller="DataController">
-                <div class="well text-center">
-                    <h1 id="header1">Search</h1>
-                    <p>Search for a song by name, artist, or lyrics.</p>
-                    <label><input ng-model="searchText"></label>
-                </div>
-                <div id="searchTextResults">
-                    <ul>
-                        <li class="request-list col-md-3"" ng-repeat=" | filter:searchText | orderBy:'name'">
-                            <button ng-click="remove(music)" class="btn btn-danger btn-remove-cat">Remove</button>
-                            <p>Artist: {{music.name}} Song: {{music.song}}</p>
-                        </li>
-                    </ul>
-                </div>
+                <ul>
+                    <li class="request-list col-md-3"" ng-repeat="music in musics">
+                        <button ng-click="remove(music)" class="btn btn-danger btn-remove-cat">Remove</button>
+                        <p>Artist: {{music.name}} Song: {{music.song}}</p>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
