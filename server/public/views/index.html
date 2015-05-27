@@ -40,36 +40,13 @@
                         <p>Search for a song by name, artist, or lyrics.</p>
                         <label><input ng-model="searchText"></label>
                     </div>
-                    <div ng-cloak ng-app="TabsApp">
-                        <div class="container" ng-controller="TabManagerCtrl"> <b>Search:</b>
-                            {{searchText}}
-                            <ul class="sel">
-                                <li class="con" ng-repeat="selItem in itemsSelectedArr">{{selItem}} <a href="javascript:void(0);" ng-click="itemSelectedDelet(selItem);">X</a>
-
-                                </li>
-                                <li>
-                                    <input type="text" ng-model="searchText" ngsearchtext="searchMe(searchText);" />
-                                </li>
-                            </ul>
-                            <br class="clearall" />
-                            <br/>
-                            <div class="autocompletepanel" ng-show="itemsDisplaPanel">
-                                <div ng-repeat="item in itemsArr"> <a href="javascript:void(0);" ng-click="itemSelectedData(item);">{{item}}</a>
-
-                                </div>
-                            </div>
-                            <!-- autocomplete-->
-                        </div>
-                        <!-- /container -->
+                    <div id="searchTextResults">
+                        <ul class="well">
+                            <li ng-repeat="music in musics | filter:searchText | orderBy:'name'">
+                                <p class="text-center">{{music.name}} - {{music.song}}</p>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- /app -->
-                    <!--<div id="searchTextResults">-->
-                        <!--<ul class="well">-->
-                            <!--<li ng-repeat="music in musics | filter:searchText | orderBy:'name'">-->
-                                <!--<p class="text-center">{{music.name}} - {{music.song}}</p>-->
-                            <!--</li>-->
-                        <!--</ul>-->
-                    <!--</div>-->
                 </div>
             </div>
         </div>
