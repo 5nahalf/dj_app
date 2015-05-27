@@ -50,9 +50,9 @@
         <div id="tab5" class="tab">
             <div ng-controller="DataController">
                 <ul>
-                    <li class="request-list" ng-repeat="music in musics">
+                    <li class="request-list col-md-3"" ng-repeat="music in musics">
                         <button ng-click="remove(music)" class="btn btn-danger btn-remove-cat">Remove</button>
-                        <p class="col-md-3">Artist: {{music.name}} Song: {{music.song}}</p>
+                        <p>Artist: {{music.name}} Song: {{music.song}}</p>
                     </li>
                 </ul>
             </div>
