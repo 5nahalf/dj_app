@@ -39,21 +39,23 @@
 
         <div id="tab4" class="tab">
             <div ng-controller="DataController">
-            <form novalidate>
-                <p>Artist:</p><input type="text" ng-model="music.name" class="requestName"><br />
-                <p>Song Name:</p><input type="text" ng-model="music.song" class="requestSong"><br />
-                <p>Lyrics:</p><textarea rows="50" cols="100" ng-model="music.lyrics" class="requestLyrics"></textarea><br />
-                <button class="btn btn-wed" type="submit" ng-click="add(music)" value="Save">Add song</button>
-            </form>
+                <form novalidate>
+                    <p>Artist:</p><input type="text" ng-model="music.name" class="requestName"><br />
+                    <p>Song Name:</p><input type="text" ng-model="music.song" class="requestSong"><br />
+                    <p>Lyrics:</p><textarea rows="50" cols="100" ng-model="music.lyrics" class="requestLyrics"></textarea><br />
+                    <button class="btn btn-wed" type="submit" ng-click="add(music)" value="Save">Add song</button>
+                </form>
             </div>
         </div>
         <div id="tab5" class="tab">
-            <ul>
-                <li class="request-list" ng-repeat="music in musics">
-                    <button ng-click="remove(music)" class="btn btn-danger btn-remove-cat">Remove</button>
-                    <p>Artist: {{music.name}} Song: {{music.song}}</p>
-                </li>
-            </ul>
+            <div ng-controller="DataController">
+                <ul>
+                    <li class="request-list" ng-repeat="music in musics">
+                        <button ng-click="remove(music)" class="btn btn-danger btn-remove-cat">Remove</button>
+                        <p>Artist: {{music.name}} Song: {{music.song}}</p>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
