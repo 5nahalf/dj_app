@@ -10,7 +10,7 @@ var Cat = mongoose.model("cat", {name:String});
 var Song = mongoose.model("music", {name:String, song:String, lyrics:String, requested:Number});
 
 router.post("/madd", function(request, response, next){
-    var music = new Song({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics, requested:request.body.requested});
+    var music = new Song({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics, requested: request.body.requested});
     music.save(function(err){
         if(err) console.log("error %s", err);
         response.send(music.toJSON());
