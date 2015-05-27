@@ -38,14 +38,14 @@
                     <div class="well text-center">
                         <h1 id="header1">Search</h1>
                         <p>Search for a song by name, artist, or lyrics.</p>
+                    </div>
                         <label><input ng-model="searchText"></label>
-                        <div id="searchTextResults">
-                            <ul class="well">
-                                <li ng-repeat="music in musics | filter:searchText | orderBy:name">
-                                    <p>{{music.name}} - {{music.song}}</p>
-                                </li>
-                            </ul>
-                        </div>
+                    <div id="searchTextResults">
+                        <ul class="well">
+                            <li ng-repeat="music in musics | filter:searchText | orderBy:name">
+                                <p>{{music.name}} - {{music.song}}</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
