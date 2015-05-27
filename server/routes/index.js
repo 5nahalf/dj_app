@@ -7,7 +7,7 @@ mongoose.connect(uriUtil.formatMongoose(uri));
 
 var path =require("path");
 var Cat = mongoose.model("cat", {name:String});
-var Song = mongoose.model("music", {name:String, song:String, lyrics:String});
+var Song = mongoose.model("music", {name:String, song:String, lyrics:String, request:String});
 
 router.post("/madd", function(request, response, next){
     var music = new Song({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics});

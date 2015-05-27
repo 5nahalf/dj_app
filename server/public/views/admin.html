@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/views/css/stylesheetadmin.css">
 </head>
 <body>
-<div class="tabs">
+<div class="tabs" ng-controller="DataController">
     <ul class="tab-links">
         <li class="active"><a href="#tab1">Home</a></li>
         <li><a href="#tab2">Style</a></li>
@@ -18,12 +18,12 @@
 
     <div class="tab-content">
         <div id="tab1" class="tab active">
-            <div ng-controller="IndexController">
+            <div>
                 <h4>Requests</h4>
                 <ul>
-                    <li ng-repeat="cat in cats">
-                        <button ng-click="remove(cat)" class="btn btn-md btn-remove-cat">Remove Song</button>
-                        <p>{{cat.name}}</p>
+                    <li ng-repeat="music in musics">
+                        <button ng-click="remove(music)" class="btn btn-md btn-remove-cat">Remove Song</button>
+                        <p>{{music.request}}</p>
                     </li>
                 </ul>
             </div>
@@ -38,7 +38,7 @@
         </div>
 
         <div id="tab4" class="tab">
-            <div ng-controller="DataController">
+            <div>
                 <form novalidate>
                     <p>Artist:</p><input type="text" ng-model="music.name" class="requestName"><br />
                     <p>Song Name:</p><input type="text" ng-model="music.song" class="requestSong"><br />
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div id="tab5" class="tab">
-            <div ng-controller="DataController">
+            <div>
                 <ul>
                     <li class="request-list" ng-repeat="music in musics">
                         <button ng-click="remove(music)" class="btn btn-danger btn-remove-cat">Remove</button>

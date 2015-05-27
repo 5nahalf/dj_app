@@ -8,21 +8,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class="container-fluid" ng-controller="IndexController">
+        <div class="container-fluid" ng-controller="DataController">
             <div class="well text-center">
                 <h1 id="header1">Wedding Party Name</h1>
                 <a href="views/search.html">Browse music collection</a>
-                <p class="catName" ng-show="cat.name">Your request is: {{cat.name}}</p>
-                <p class="catName" ng-hide="cat.name">Enter your dance request.</p>
+                <p class="catName" ng-show="music.request">Your request is: {{music.request}}</p>
+                <p class="catName" ng-hide="music.request">Enter your dance request.</p>
                 <form novalidate>
-                    <input type="text" ng-model="cat.name"><br />
-                    <button class="btn btn-wed" type="submit" ng-click="add(cat)" value="Save">Request!</button>
+                    <input type="text" ng-model="music.request"><br />
+                    <button class="btn btn-wed" type="submit" ng-click="add(music.request)" value="Save">Request!</button>
                 </form>
             </div>
             <h4 class="text-center">Current Requests</h4>
             <ul class="well">
-                <li ng-repeat="cat in cats">
-                    <p class="text-center">{{cat.name}}</p>
+                <li ng-repeat="music in musics">
+                    <p class="text-center">{{music.request}}</p>
                 </li>
             </ul>
         </div>
