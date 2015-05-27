@@ -15,8 +15,7 @@
         <label>Search: <input ng-model="searchText"></label>
         <table id="searchTextResults">
             <tr ng-repeat="music in musics | filter:searchText">
-                <td>{{music.name}}</td>
-                <td>{{music.song}}</td>
+                <td>{{music.name}} - {{music.song}}</td>
             </tr>
         </table>
     </div>
