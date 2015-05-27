@@ -21,7 +21,7 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     fetchCats();
 }]);
 
-app.controller("DataController", ["$scope", "$http", function($scope, $http){
+app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     $scope.music = {};
     $scope.musics = [];
     var fetchMusic = function(){
