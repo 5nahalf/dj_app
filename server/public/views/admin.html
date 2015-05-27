@@ -30,24 +30,24 @@
             <p>This tab should do something, but it doesn't :(</p>
         </div>
         <div id="tab4" class="tab">
-            <div ng-controller="DataController">
+            <div ng-controller="IndexController">
                 <form novalidate>
                     <p>Artist:</p><input type="text" ng-model="music.name" class="requestName"><br />
                     <p>Song Name:</p><input type="text" ng-model="music.song" class="requestSong"><br />
                     <p>Lyrics:</p><textarea rows="50" cols="100" ng-model="music.lyrics" class="requestLyrics"></textarea><br />
-                    <button class="btn btn-wed" type="submit" ng-click="add(music)" value="Save">Add song</button>
+                    <button class="btn btn-wed" type="submit" ng-click="madd(music)" value="Save">Add song</button>
                 </form>
             </div>
         </div>
         <div id="tab5" class="tab">
-            <div class="container-fluid" ng-controller="DataController">
+            <div class="container-fluid" ng-controller="IndexController">
                 <div class="text-center">
                     <label><input ng-model="searchText">Search</label>
                 </div>
                 <div id="searchTextResults">
                     <ul>
                         <li class="request-list col-md-4" ng-repeat="music in musics | filter:searchText | orderBy:'name'">
-                            <button ng-click="remove(music)" class="btn btn-danger btn-remove-cat">Remove</button>
+                            <button ng-click="mremove(music)" class="btn btn-danger btn-remove-cat">Remove</button>
                             <p>Artist: {{music.name}} Song: {{music.song}}</p>
                         </li>
                     </ul>

@@ -18,10 +18,13 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     $scope.remove = function(cat) {
         return $http.post('/remove', cat).then(fetchCats);
     };
+    $scope.addSong = function(id){
+        console.log(id);
+        return $http.post("/add", id).then(fetchCats);
+    };
     fetchCats();
-}]);
 
-app.controller("DataController", ["$scope", "$http", function($scope, $http){
+
     $scope.music = {};
     $scope.musics = [];
     var fetchMusic = function(){
@@ -34,14 +37,18 @@ app.controller("DataController", ["$scope", "$http", function($scope, $http){
             return response.data;
         })
     };
-    $scope.add = function(data){
+    $scope.madd = function(data){
         return $http.post("/madd", data).then(fetchMusic);
     };
-    $scope.remove = function(data) {
+    $scope.mremove = function(data) {
         return $http.post('/mremove', data).then(fetchMusic);
     };
     fetchMusic();
+
+
 }]);
+
+
 
 
 $(document).ready(function() {
@@ -51,5 +58,5 @@ $(document).ready(function() {
         $(this).parent('li').addClass('active').siblings().removeClass('active');
         e.preventDefault();
     });
-});
 
+});

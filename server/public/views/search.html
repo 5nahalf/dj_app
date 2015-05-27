@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>DJ request</title>
@@ -8,27 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<br/>
-<br/>
-<div ng-cloak ng-app="TabsApp">
-    <div class="container" ng-controller="TabManagerCtrl"> <b>Search:</b>
+<div ng-cloak ng-app="app">
+    <div class="container" ng-controller="DataController"> <b>Search:</b>
         {{searchText}}
         <ul class="sel">
-            <li class="con" ng-repeat="selItem in itemsSelectedArr">{{selItem}} <a href="javascript:void(0);" ng-click="itemSelectedDelet(selItem);">X</a>
-
-            </li>
+            <li class="con" ng-repeat="selItem in itemsSelectedArr">{{selItem.name}}</li>
             <li>
                 <input type="text" ng-model="searchText" ngsearchtext="searchMe(searchText);" />
             </li>
         </ul>
-        <br class="clearall" />
-        <br/>
-        <div class="autocompletepanel" ng-show="itemsDisplaPanel">
-            <div ng-repeat="item in itemsArr"> <a href="javascript:void(0);" ng-click="itemSelectedData(item);">{{item}}</a>
-
-            </div>
-        </div>
-        <!-- autocomplete-->
     </div>
     <!-- /container -->
 </div>
