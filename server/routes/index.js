@@ -12,7 +12,7 @@ var Song = mongoose.model("music", {name:String, song:String, lyrics:String, req
 router.post("/madd", function(request, response, next){
     var music = new Song({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics});
     music.save(function(err){
-        if(err) console.log("meow %s", err);
+        if(err) console.log("error %s", err);
         response.send(music.toJSON());
         //next();
     });
@@ -20,7 +20,7 @@ router.post("/madd", function(request, response, next){
 router.post('/mremove', function(request, response, next) {
     var music = Song.find({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics});
     music.remove(function(err) {
-        if (err) console.log('Error when removing cat: %s', err);
+        if (err) console.log('Error when removing song: %s', err);
         //next();
     });
 });
