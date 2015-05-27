@@ -1,4 +1,4 @@
-var app = angular.module("app", ['infinite-scroll']);
+var app = angular.module("app", []);
 app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     $scope.cat = {};
     $scope.cats = [];
