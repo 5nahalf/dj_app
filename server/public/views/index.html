@@ -39,13 +39,13 @@
                         <h1 id="header1">Search</h1>
                         <p>Search for a song by name, artist, or lyrics.</p>
                         <label><input ng-model="searchText"></label>
-                        <table id="searchTextResults">
-                            <ul>
+                        <div id="searchTextResults">
+                            <ul class="well">
                                 <li ng-repeat="music in musics | filter:searchText">
                                     <p>{{music.name}} - {{music.song}}</p>
                                 </li>
                             </ul>
-                        </table>
+                        </div>
                     </div>
                 </div>
             </div>
