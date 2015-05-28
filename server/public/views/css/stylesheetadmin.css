@@ -20,3 +20,18 @@
     color: black;
     list-style: none;
 }
+body {
+    background-color: #373835;
+    color: #999999;
+}
+.btn {
+    background-color: #444444;
+}
+a {
+    text-decoration: none;
+    color: #373835;
+}
+a:hover {
+    text-decoration: none;
+    color: #373835;
+}
