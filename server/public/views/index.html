@@ -42,8 +42,9 @@
             <div class="text-center" id="searchTextResults">
                 <ul class="well">
                     <li ng-repeat="music in musics | filter:searchText | orderBy:'name'">
-                        <div>
-                            <div class="songReqest" type="submit" ng-click="addSong(music.name, music.song)" value="Save">{{music.name}} - {{music.song}}</div>
+                        <div class="wrapIt">
+                            <div class="btn btn-wed btn-sm subBtn" type="submit" ng-click="addSong(music.name, music.song)" value="Save">Request-></div>
+                            <div class="musicName">{{music.name}} - {{music.song}}</div>
                         </div>
                     </li>
                 </ul>

@@ -26,12 +26,11 @@
         <br><br>
         <div ng-show="tab === 1">
             <h4>Requests</h4>
-            <ul class="requests">
-                <li ng-repeat="cat in cats">
-                    <button ng-click="remove(cat)" class="btn btn-md btn-remove-cat">Remove Song</button>
-                    <p>{{cat.name}}</p>
+            <ol class="requests">
+                <li class="col-md-4" ng-repeat="cat in cats">
+                    <button ng-click="remove(cat)" class="btn btn-md btn-remove-cat">Remove: {{cat.name}}</button>
                 </li>
-            </ul>
+            </ol>
         </div>
         <p ng-show="tab === 2">This tab should do something, but it doesn't :(</p>
         <div ng-show="tab === 3">

@@ -69,3 +69,13 @@ a:hover {
 .requests {
     font-weight: bold;
 }
+.wrapIt{
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 5px;
+}
+.subBtn {
+    float: left;
+}
+.musicName {
+
+}
