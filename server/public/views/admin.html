@@ -42,15 +42,13 @@
             </form>
         </div>
         <div ng-show="tab === 4" class="container-fluid">
-            <div class="text-center">
+            <div class="col-md-4">
                 <label><input ng-model="searchText">Search</label>
             </div>
             <div id="searchTextResults">
-                <ul class="musicData">
-                    <li class="col-md-4" ng-repeat="music in musics | filter:searchText | orderBy:'name'">
+                    <p class="col-md-4" ng-repeat="music in musics | filter:searchText | orderBy:'name'">
                         <button ng-click="mremove(music)" class="btn btn-danger btn-remove-cat">Artist: {{music.name}} Song: {{music.song}}</button>
-                    </li>
-                </ul>
+                    </p>
             </div>
         </div>
     </ul>
