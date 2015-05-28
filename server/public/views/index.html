@@ -40,11 +40,11 @@
                         <p>Search for a song by name, artist, or lyrics.</p>
                         <label><input ng-model="searchText"></label>
                     </div>
-                    <div id="searchTextResults">
+                    <div class="text-center" id="searchTextResults">
                         <ul class="well">
                             <li ng-repeat="music in musics | filter:searchText | orderBy:'name'">
                                 <form novalidate>
-                                    <p class="text-center">{{music.name}} - {{music.song}}</p>
+                                    <p>{{music.name}} - {{music.song}}</p>
                                     <button class="btn btn-wed" type="submit" ng-click="addSong(music.name, music.song)" value="Save">Request</button>
                                 </form>
                             </li>
