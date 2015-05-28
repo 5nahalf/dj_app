@@ -13,14 +13,16 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
         })
     };
     $scope.add = function(cat){
+        console.log(cat);
         return $http.post("/add", cat).then(fetchCats);
     };
     $scope.remove = function(cat) {
         return $http.post('/remove', cat).then(fetchCats);
     };
-    $scope.addSong = function(id){
-        console.log(id);
-        return $http.post("/add", id).then(fetchCats);
+    $scope.addSong = function(id, art){
+        var newSong = {"name":id + ": " + art};
+        console.log(newSong);
+        return $http.post("/add", newSong).then(fetchCats);
     };
     fetchCats();
 

@@ -45,7 +45,7 @@
                             <li ng-repeat="music in musics | filter:searchText | orderBy:'name'">
                                 <form novalidate>
                                     <p class="text-center">{{music.name}} - {{music.song}}</p>
-                                    <button class="btn btn-wed" id="{{music.song}}" type="submit" ng-click="addSong(music.song)" value="Save">Request</button>
+                                    <button class="btn btn-wed" type="submit" ng-click="addSong(music.name, music.song)" value="Save">Request</button>
                                 </form>
                             </li>
                         </ul>
