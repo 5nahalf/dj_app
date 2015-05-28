@@ -14,8 +14,7 @@ li {
 #header2 {
     color: #373835;
 }
-.catName {
-    font-size: 20px;
+.requestName {
     color: #373835;
 }
 h4 {
@@ -25,6 +24,8 @@ h4 {
     color: #373835;
     background-color: #B5B8AE;
     border-color: #F4F7EB;
+    border-radius: 10px;
+
 }
 
 .btn-wed:hover,
@@ -35,90 +36,36 @@ h4 {
     color: #373835;
     background-color: #767872;
     border-color: #F4F7EB;
+    border-radius: 10px;
+
 }
 
-.btn-wed:active,
-.btn-wed.active,
-.open .dropdown-toggle.btn-wed {
-    background-image: none;
-}
 
-.btn-wed.disabled,
-.btn-wed[disabled],
-fieldset[disabled] .btn-wed,
-.btn-wed.disabled:hover,
-.btn-wed[disabled]:hover,
-fieldset[disabled] .btn-wed:hover,
-.btn-wed.disabled:focus,
-.btn-wed[disabled]:focus,
-fieldset[disabled] .btn-wed:focus,
-.btn-wed.disabled:active,
-.btn-wed[disabled]:active,
-fieldset[disabled] .btn-wed:active,
-.btn-wed.disabled.active,
-.btn-wed[disabled].active,
-fieldset[disabled] .btn-wed.active {
+.pill {
     background-color: #B5B8AE;
-    border-color: #F4F7EB;
+    color: #373835;
+    border-radius: 10px;
+    margin: 5px 2px 5px 0px;
+    list-style: none;
+    display: inline-block;
+    width: 100px;
 }
-
-.btn-wed .badge {
-    color: #B5B8AE;
-    background-color: #373835;
+.songReqest {
+    background-color: #B5B8AE;
+    color: #373835;
+    border-radius: 10px;
+    margin: 5px 2px 5px 0px;
+    list-style: none;
 }
-
-.tabs {
-    width:100%;
-    display:inline-block;
+a {
+    text-decoration: none;
+    color: #373835;
 }
+a:hover {
+    text-decoration: none;
+    color: #373835;
 
-/*----- Tab Links -----*/
-/* Clearfix */
-.tab-links:after {
-    display:block;
-    clear:both;
-    content:'';
 }
-
-.tab-links li {
-    margin:0px 5px;
-    float:left;
-    list-style:none;
-}
-
-.tab-links a {
-    padding:9px 15px;
-    display:inline-block;
-    border-radius:3px 3px 0px 0px;
-    background:#7FB5DA;
-    font-size:16px;
-    font-weight:600;
-    color:#4c4c4c;
-    transition:all linear 0.15s;
-}
-
-.tab-links a:hover {
-    background:#a7cce5;
-    text-decoration:none;
-}
-
-li.active a, li.active a:hover {
-    background:#fff;
-    color:#4c4c4c;
-}
-
-/*----- Content of Tabs -----*/
-.tab-content {
-    padding:15px;
-    border-radius:3px;
-    box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
-    background:#fff;
-}
-
-.tab {
-    display:none;
-}
-
-.tab.active {
-    display:block;
+.requests {
+    font-weight: bold;
 }

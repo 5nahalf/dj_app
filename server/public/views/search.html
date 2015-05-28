@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app" ng-controller="IndexController">
 <head lang="en">
     <meta charset="UTF-8">
     <title>DJ request</title>
@@ -8,19 +8,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div ng-cloak ng-app="app">
-    <div class="container" ng-controller="DataController"> <b>Search:</b>
-        {{searchText}}
-        <ul class="sel">
-            <li class="con" ng-repeat="selItem in itemsSelectedArr">{{selItem.name}}</li>
-            <li>
-                <input type="text" ng-model="searchText" ngsearchtext="searchMe(searchText);" />
-            </li>
-        </ul>
-    </div>
-    <!-- /container -->
-</div>
-<!-- /app -->
+<section>
+    <ul class="text-center container" ng-init="tab = 1">
+        <li ng-class="{active:tab===1}" class="pill">
+            <a ng-click="tab = 1">Request</a>
+        </li>
+        <li ng-class="{active:tab===2}" class="pill">
+            <a ng-click="tab = 2">Search</a>
+        </li>
+        <div ng-show="tab === 1">
+                <div class="well text-center">
+                    <h1 id="header1">Wedding Party Name</h1>
+                    <p class="requestName" ng-show="cat.name">Your request is: {{cat.name}}</p>
+                    <p class="requestName" ng-hide="cat.name">Enter your dance request.</p>
+                    <form novalidate>
+                        <input type="text" ng-model="cat.name"><br />
+                        <button class="btn btn-wed" type="submit" ng-click="add(cat)" value="Save">Request!</button>
+                    </form>
+                </div>
+                <h4 class="text-center">Current Requests</h4>
+                <ul class="well">
+                    <li ng-repeat="cat in cats">
+                        <p class="text-center">{{cat.name}}</p>
+                    </li>
+                </ul>
+            </div>
+        <div ng-show="tab === 2">
+            <div class="well text-center">
+                <h1 id="header2">Search</h1>
+                <p class="requestName">Search for a song by name, artist, or lyrics.</p>
+                <label><input ng-model="searchText"></label>
+            </div>
+            <div class="text-center" id="searchTextResults">
+                <ul class="well">
+                    <li ng-repeat="music in musics | filter:searchText | orderBy:'name'">
+                        <form novalidate>
+                            <p>{{music.name}} - {{music.song}}</p>
+                            <button class="btn btn-wed" type="submit" ng-click="addSong(music.name, music.song)" value="Save">Request</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ul>
+</section>
 <a href="views/admin.html">_</a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

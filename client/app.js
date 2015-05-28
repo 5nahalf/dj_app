@@ -13,7 +13,6 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
         })
     };
     $scope.add = function(cat){
-        console.log(cat);
         return $http.post("/add", cat).then(fetchCats);
     };
     $scope.remove = function(cat) {
@@ -21,7 +20,6 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     };
     $scope.addSong = function(id, art){
         var newSong = {"name":id + ": " + art};
-        console.log(newSong);
         return $http.post("/add", newSong).then(fetchCats);
     };
     fetchCats();
@@ -53,12 +51,12 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
 
 
 
-$(document).ready(function() {
-    $('.tabs .tab-links a').on('click', function(e)  {
-        var currentAttrValue = $(this).attr('href');
-        $('.tabs ' + currentAttrValue).show().siblings().hide();
-        $(this).parent('li').addClass('active').siblings().removeClass('active');
-        e.preventDefault();
-    });
-
-});
+//$(document).ready(function() {
+//    $('.tabs .tab-links a').on('click', function(e)  {
+//        var currentAttrValue = $(this).attr('href');
+//        $('.tabs ' + currentAttrValue).show().siblings().hide();
+//        $(this).parent('li').addClass('active').siblings().removeClass('active');
+//        e.preventDefault();
+//    });
+//
+//});
