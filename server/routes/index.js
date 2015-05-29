@@ -8,6 +8,34 @@ mongoose.connect(uriUtil.formatMongoose(uri));
 var path =require("path");
 var Cat = mongoose.model("cat", {name:String});
 var Song = mongoose.model("music", {name:String, song:String, lyrics:String, requested:Number});
+var Style = mongoose.model("style", {num:Number, wedding:String, background:String, subBackground:String, button:String, text:String});
+
+router.post("/sadd", function(request, response, next){
+    var style = new Style({num: 1, wedding: request.body.wedding, background: request.body.background, subBackground: request.body.subBackground, button: request.body.button, text:request.body.text});
+    style.save(function(err){
+        if(err) console.log("error %s", err);
+        response.send(style.toJSON());
+        //next();
+    });
+});
+router.post('/sremove', function(request, response, next) {
+    var style = Style.find({wedding: request.body.wedding, background: request.body.background, subBackground: request.body.subBackground, button: request.body.button});
+    style.remove(function(err) {
+        if (err) console.log('Error when removing song: %s', err);
+        //next();
+    });
+});
+router.get("/styledata", function(request, response, next){
+    return Style.find({}).exec(function(err, styles){
+        if(err) throw new Error(err);
+        response.send(JSON.stringify(styles));
+        //next();
+    });
+});
+
+
+
+//database entry
 
 router.post("/madd", function(request, response, next){
     var music = new Song({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics, requested: request.body.requested});

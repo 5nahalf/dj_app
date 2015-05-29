@@ -1,4 +1,4 @@
-var app = angular.module("app", []);
+var app = angular.module("app", ['colorpicker.module']);
 app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     $scope.cat = {};
     $scope.cats = [];
@@ -46,4 +46,29 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     fetchMusic();
 
 
+    $scope.style = {};
+    $scope.styles = [];
+    var fetchStyle = function(){
+        return $http.get("/styledata").then(function(response){
+            if(response.status !== 200){
+                throw new Error("failed to fetch style from the api");
+            }
+            $scope.style = {};
+            $scope.styles = response.data;
+            return response.data;
+        })
+    };
+    $scope.sadd = function(data){
+        return $http.post("/sadd", data).then(fetchStyle);
+    };
+    $scope.sremove = function(data) {
+        return $http.post('/sremove', data).then(fetchStyle);
+    };
+    fetchStyle();
 }]);
+app.filter('reverse', function() {
+    return function(items) {
+        return items.slice().reverse();
+    };
+});
+

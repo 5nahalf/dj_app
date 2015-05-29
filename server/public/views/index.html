@@ -6,44 +6,51 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="/views/css/stylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="/vendor/angular/angular.min.js" type="text/javascript"></script>
+    <script src="/vendor/colorpicker/bootstrap-colorpicker-module.js" type="text/javascript"></script>
+    <script src="/assets/scripts/app.min.js" type="text/javascript"></script>
 </head>
-<body>
+<body ng-repeat="style in styles | reverse" style="background-color:{{style.background}}; color:{{style.text}}">
 <section>
     <ul class="text-center container" ng-init="tab = 1">
-        <li ng-class="{active:tab===1}" class="pill">
+        <li ng-class="{active:tab===1}" class="pill" style="background-color:{{style.button}}">
             <a ng-click="tab = 1">Request</a>
         </li>
-        <li ng-class="{active:tab===2}" class="pill">
+        <li ng-class="{active:tab===2}" class="pill" style="background-color:{{style.button}}">
             <a ng-click="tab = 2">Search</a>
         </li>
         <div ng-show="tab === 1">
-            <div class="well text-center">
+            <div class="well" style="background-color:{{style.subBackground}}">
                 <h3 id="header1">Wedding Party Name</h3>
                 <p class="requestName" ng-show="cat.name">Your request is: {{cat.name}}</p>
                 <p class="requestName" ng-hide="cat.name">Enter your dance request.</p>
                 <form novalidate>
                     <input type="text" ng-model="cat.name">
-                    <button class="btn btn-wed btn-sm" type="submit" ng-click="add(cat)" value="Save">Request!</button>
+                    <button style="background-color:{{style.button}}" class="btn btn-wed btn-sm" type="submit" ng-click="add(cat)" value="Save">Request!</button>
                 </form>
             </div>
-            <ul class="well">
-                <p class="text-center requests">Current Requests</p>
-                <li ng-repeat="cat in cats">
-                    <p class="text-center">{{cat.name}}</p>
-                </li>
-            </ul>
+            <div>
+                <ul class="well" style="background-color:{{style.subBackground}}">
+                    <p class=" requests">Current Requests</p>
+                    <div ng-repeat="cat in cats">
+                        <p class="">{{cat.name}}</p>
+                    </div>
+                </ul>
+            </div>
         </div>
         <div ng-show="tab === 2">
-            <div class="well text-center">
+            <div class="well " style="background-color:{{style.subBackground}}">
                 <h3 id="header2">Search</h3>
                 <p class="requestName">Search by name, artist, or lyrics.</p>
                 <label><input ng-model="searchText"></label>
             </div>
-            <div class="text-center" id="searchTextResults">
-                <ul class="well">
+            <div class=" well" style="background-color:{{style.subBackground}}">
+                <ul>
                     <li ng-repeat="music in musics | filter:searchText | orderBy:'name'">
                         <div class="wrapIt">
-                            <div class="btn btn-wed btn-sm subBtn" type="submit" ng-click="addSong(music.name, music.song)" value="Save">Request-></div>
+                            <div style="background-color:{{style.button}}" class="btn btn-wed btn-sm subBtn" type="submit" ng-click="addSong(music.name, music.song)" value="Save">Request-></div>
                             <div class="musicName">{{music.name}} - {{music.song}}</div>
                         </div>
                     </li>
@@ -52,9 +59,6 @@
         </div>
     </ul>
 </section>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src="/vendor/angular/angular.min.js" type="text/javascript"></script>
-<script src="/assets/scripts/app.min.js" type="text/javascript"></script>
+
 </body>
 </html>

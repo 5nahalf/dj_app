@@ -32,7 +32,17 @@
                 </li>
             </ol>
         </div>
-        <p ng-show="tab === 2">This tab should do something, but it doesn't :(</p>
+        <div ng-show="tab === 2">
+            <p>Wedding:</p><input type="text"  ng-model="style.wedding">
+            <p>Background:</p><input type="text" colorpicker ng-model="style.background">
+            <p>Sub-Background:</p><input type="text" colorpicker ng-model="style.subBackground">
+            <p>Buttons:</p><input type="text" colorpicker ng-model="style.button">
+            <p>Text:</p><input type="text" colorpicker ng-model="style.text">
+            <button class="btn btn-wed" type="submit" ng-click="sadd(style)" value="Save">Add style</button>
+            <p ng-repeat="style in styles">
+                <button ng-click="sremove(style)" class="btn btn-danger btn-remove-cat">{{style.wedding}}</button>
+            </p>
+        </div>
         <div ng-show="tab === 3">
             <form novalidate>
                 <p>Artist:</p><input type="text" ng-model="music.name" class="requestName"><br />
@@ -56,6 +66,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="/vendor/angular/angular.min.js" type="text/javascript"></script>
+<script src="/vendor/colorpicker/bootstrap-colorpicker-module.js" type="text/javascript"></script>
 <script src="/assets/scripts/app.min.js" type="text/javascript"></script>
 </body>
 </html>

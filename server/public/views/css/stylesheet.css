@@ -2,19 +2,10 @@
     background-color: #DBDED3;
 }
 body {
-    background-color: #F4F7EB;  }
+    background-color: #F4F7EB;
+}
 li {
     list-style-type: none;
-    color: #373835;
-    background-color: #DBDED3;
-}
-#header1 {
-    color: #373835;
-}
-#header2 {
-    color: #373835;
-}
-.requestName {
     color: #373835;
 }
 h4 {
