@@ -28,7 +28,7 @@
             <h4>Requests</h4>
             <ol class="requests">
                 <li class="col-md-4" ng-repeat="cat in cats">
-                    <button ng-click="remove(cat)" class="btn btn-md btn-remove-cat">Remove: {{cat.name}}</button>
+                    <button ng-click="remove(cat)" class="btn btn-md btn-danger">Remove: {{cat.name}}</button>
                 </li>
             </ol>
         </div>
@@ -39,7 +39,7 @@
                 <p>Sub-Background:</p><input type="text" colorpicker ng-model="style.subBackground">
                 <p>Buttons:</p><input type="text" colorpicker ng-model="style.button">
                 <p>Text:</p><input type="text" colorpicker ng-model="style.text">
-                <button class="btn btn-wed" type="submit" ng-click="sadd(style)" value="Save">Add style</button>
+                <button class="btn btn-wed btn-danger" type="submit" ng-click="sadd(style)" value="Save">Add style</button>
             </div>
             <ul ng-repeat="style in styles" class="col-md-2">
                 <li>Name: {{style.wedding}}</li>
