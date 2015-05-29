@@ -7,7 +7,7 @@ mongoose.connect(uriUtil.formatMongoose(uri));
 
 var path =require("path");
 var Cat = mongoose.model("cat", {name:String});
-var Song = mongoose.model("music", {name:String, song:String, lyrics:String, requested:Number});
+var Song = mongoose.model("music", {name:String, song:String, lyrics:String, play:Number});
 var Style = mongoose.model("style", {num:Number, wedding:String, background:String, subBackground:String, button:String, text:String});
 
 router.post("/sadd", function(request, response, next){
@@ -38,7 +38,7 @@ router.get("/styledata", function(request, response, next){
 //database entry
 
 router.post("/madd", function(request, response, next){
-    var music = new Song({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics, requested: request.body.requested});
+    var music = new Song({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics, play: request.body.play});
     music.save(function(err){
         if(err) console.log("error %s", err);
         response.send(music.toJSON());

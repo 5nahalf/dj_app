@@ -33,15 +33,22 @@
             </ol>
         </div>
         <div ng-show="tab === 2">
-            <p>Wedding:</p><input type="text"  ng-model="style.wedding">
-            <p>Background:</p><input type="text" colorpicker ng-model="style.background">
-            <p>Sub-Background:</p><input type="text" colorpicker ng-model="style.subBackground">
-            <p>Buttons:</p><input type="text" colorpicker ng-model="style.button">
-            <p>Text:</p><input type="text" colorpicker ng-model="style.text">
-            <button class="btn btn-wed" type="submit" ng-click="sadd(style)" value="Save">Add style</button>
-            <p ng-repeat="style in styles">
-                <button ng-click="sremove(style)" class="btn btn-danger btn-remove-cat">{{style.wedding}}</button>
-            </p>
+            <div class="col-md-2">
+                <p>Wedding:</p><input type="text"  ng-model="style.wedding">
+                <p>Background:</p><input type="text" colorpicker ng-model="style.background">
+                <p>Sub-Background:</p><input type="text" colorpicker ng-model="style.subBackground">
+                <p>Buttons:</p><input type="text" colorpicker ng-model="style.button">
+                <p>Text:</p><input type="text" colorpicker ng-model="style.text">
+                <button class="btn btn-wed" type="submit" ng-click="sadd(style)" value="Save">Add style</button>
+            </div>
+            <ul ng-repeat="style in styles" class="col-md-2">
+                <li>Name: {{style.wedding}}</li>
+                <li>Background: {{style.background}}</li>
+                <li>Subbackground: {{style.subBackground}}</li>
+                <li>Buttons: {{style.button}}</li>
+                <li>Text: {{style.text}}</li>
+                <button ng-click="sremove(style)" class="btn btn-danger btn-remove-cat">Remove Style</button>
+            </ul>
         </div>
         <div ng-show="tab === 3">
             <form novalidate>
