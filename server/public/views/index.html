@@ -48,7 +48,7 @@
             </div>
             <div class="well text-center" style="background-color:{{style.subBackground}}">
                 <div ng-repeat="music in musics | filter:searchText | limitTo: 20" class="wrapIt text-center">
-                    <button style="background-color:{{style.button}}" class="btn btn-wed btn-sm subBtn" type="submit" ng-click="addSong(music.name, music.song); madd(muisc.play)" value="Save">Request-></button>
+                    <button style="background-color:{{style.button}}" class="btn btn-wed btn-sm subBtn" type="submit" ng-click="addSong(music.name, music.song)" value="Save">Request-></button>
                     <p class="musicName">{{music.name}} - {{music.song}}</p>
                 </div>
             </div>
