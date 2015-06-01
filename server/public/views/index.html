@@ -35,7 +35,7 @@
             <div>
                 <ul class="well" style="background-color:{{style.subBackground}}">
                     <p class=" requests">Current Requests</p>
-                    <div ng-repeat="cat in cats">
+                    <div ng-repeat="cat in cats | unique: 'name'">
                         <p class="">{{cat.name}}</p>
                     </div>
                 </ul>
