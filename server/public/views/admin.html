@@ -64,7 +64,7 @@
             </div>
             <div class="col-md-4" ng-repeat="music in musics | filter:searchText | orderBy:'-play'">
                 <button ng-click="mplay(music.play = 0, music._id)" class="btn btn-danger btn-sm database">{{music.play}}</button>
-                <button ng-click="mremove(music)" class="btn btn-danger btn-sm database">X</button>
+                <!--<button ng-click="mremove(music)" class="btn btn-danger btn-sm database">X</button>-->
                 <p class="database">Artist: {{music.name}} Song: {{music.song}}</p>
             </div>
         </div>

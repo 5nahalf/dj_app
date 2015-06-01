@@ -5,7 +5,7 @@ var uriUtil = require('mongodb-uri');
 var uri = 'mongodb://client:client@ds031922.mongolab.com:31922/heroku_app36595117';
 mongoose.connect(uriUtil.formatMongoose(uri));
 
-var path =require("path");
+var path = require("path");
 var Cat = mongoose.model("cat", {name:String});
 var Song = mongoose.model("music", {name:String, song:String, lyrics:String, play:Number});
 var Style = mongoose.model("style", {num:Number, wedding:String, background:String, subBackground:String, button:String, text:String});
