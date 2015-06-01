@@ -204,3 +204,7 @@ colorpicker-preview {
     clear: both;
     background-position: 0 100%;
 }
+.database {
+    display: inline-block;
+    float: left;
+}

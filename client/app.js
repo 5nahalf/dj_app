@@ -22,6 +22,7 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
         var newSong = {"name":id + ": " + art};
         return $http.post("/add", newSong).then(fetchCats);
     };
+
     fetchCats();
 
 
@@ -42,6 +43,10 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     };
     $scope.mremove = function(data) {
         return $http.post('/mremove', data).then(fetchMusic);
+    };
+    $scope.mplay = function(data, id){
+        var play = {"play": data};
+        return $http.put('/' + id, play).then(fetchMusic);
     };
     fetchMusic();
 
@@ -71,4 +76,3 @@ app.filter('reverse', function() {
         return items.slice().reverse();
     };
 });
-

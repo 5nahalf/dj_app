@@ -11,7 +11,7 @@ var Song = mongoose.model("music", {name:String, song:String, lyrics:String, pla
 var Style = mongoose.model("style", {num:Number, wedding:String, background:String, subBackground:String, button:String, text:String});
 
 router.post("/sadd", function(request, response, next){
-    var style = new Style({num: 1, wedding: request.body.wedding, background: request.body.background, subBackground: request.body.subBackground, button: request.body.button, text:request.body.text});
+    var style = new Style({wedding: request.body.wedding, background: request.body.background, subBackground: request.body.subBackground, button: request.body.button, text:request.body.text});
     style.save(function(err){
         if(err) console.log("error %s", err);
         response.send(style.toJSON());
@@ -38,7 +38,7 @@ router.get("/styledata", function(request, response, next){
 //database entry
 
 router.post("/madd", function(request, response, next){
-    var music = new Song({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics, play: request.body.play});
+    var music = new Song({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics, play: 0});
     music.save(function(err){
         if(err) console.log("error %s", err);
         response.send(music.toJSON());
@@ -46,12 +46,23 @@ router.post("/madd", function(request, response, next){
     });
 });
 router.post('/mremove', function(request, response, next) {
-    var music = Song.find({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics});
+    var music = Song.find({name: request.body.name, song: request.body.song, lyrics: request.body.lyrics, play: 0});
     music.remove(function(err) {
         if (err) console.log('Error when removing song: %s', err);
         //next();
     });
 });
+router.put('/:id', function (request, response, next) {
+    console.log("hi");
+        Song.findByIdAndUpdate(request.params.id, request.body, function (err, Song){
+        if(err) console.log("error %s", err);
+        response.send(Song);
+        //next();
+    });
+
+
+});
+
 router.get("/musicdata", function(request, response, next){
     return Song.find({}).exec(function(err, musics){
         if(err) throw new Error(err);

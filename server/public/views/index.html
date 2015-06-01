@@ -24,12 +24,13 @@
         <div ng-show="tab === 1">
             <div class="well" style="background-color:{{style.subBackground}}">
                 <h3 id="header1">Mr. & Mrs. {{style.wedding}}</h3>
-                <p class="requestName" ng-show="cat.name">Your request is: {{cat.name}}</p>
-                <p class="requestName" ng-hide="cat.name">Enter your dance request.</p>
-                <form novalidate>
-                    <input type="text" ng-model="cat.name">
-                    <button style="background-color:{{style.button}}" class="btn btn-wed btn-sm" type="submit" ng-click="add(cat)" value="Save">Request!</button>
-                </form>
+                <p>Click Search to find your request!</p>
+                <!--<p class="requestName" ng-show="cat.name">Your request is: {{cat.name}}</p>-->
+                <!--<p class="requestName" ng-hide="cat.name">Enter your dance request.</p>-->
+                <!--<form novalidate>-->
+                    <!--<input type="text" ng-model="cat.name">-->
+                    <!--<button style="background-color:{{style.button}}" class="btn btn-wed btn-sm" type="submit" ng-click="add(cat)" value="Save">Request!</button>-->
+                <!--</form>-->
             </div>
             <div>
                 <ul class="well" style="background-color:{{style.subBackground}}">
@@ -47,8 +48,9 @@
                 <label><input ng-model="searchText"></label>
             </div>
             <div class="well text-center" style="background-color:{{style.subBackground}}">
-                <div ng-repeat="music in musics | filter:searchText | limitTo:50" class="wrapIt text-center">
-                    <button style="background-color:{{style.button}}" class="btn btn-wed btn-sm subBtn" type="submit" ng-click="addSong(music.name, music.song)" value="Save">Request-></button>
+                <h4>Top 50 most requested songs</h4>
+                <div ng-repeat="music in musics | filter:searchText | orderBy:'-play' | limitTo:50" class="wrapIt text-center">
+                    <button style="background-color:{{style.button}}" class="btn btn-wed btn-sm subBtn" type="submit" ng-click="addSong(music.name, music.song); mplay(music.play + 1, music._id)" value="Save">Request-></button>
                     <p class="musicName">{{music.name}} - {{music.song}}</p>
                 </div>
             </div>
