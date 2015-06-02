@@ -17,10 +17,16 @@ module.exports = function(grunt) {
                 src: [
                     "angular/angular.min.js",
                     "angular/angular.min.js.map",
-                    "angular/angular-csp.css"
+                    "angular/angular-csp.css",
+                    "bootstrap/dist/js/bootstrap.min.js",
+                    "jquery/dist/jquery.min.js",
+                    "jquery/dist/jquery.min.map"
+
                 ],
                 "dest": "server/public/vendor/"
-            }
+
+            },
+
         }
     });
     grunt.loadNpmTasks("grunt-contrib-copy");
