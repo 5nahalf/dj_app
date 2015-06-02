@@ -15,7 +15,6 @@ h4 {
 .btn-wed {
     color: #373835;
     background-color: #B5B8AE;
-    border-color: #F4F7EB;
     border-radius: 10px;
 
 }
@@ -30,17 +29,6 @@ h4 {
     border-color: #F4F7EB;
     border-radius: 10px;
 
-}
-
-
-.pill {
-    background-color: #B5B8AE;
-    color: #373835;
-    border-radius: 10px;
-    margin: 5px 2px 5px 0px;
-    list-style: none;
-    display: inline-block;
-    width: 100px;
 }
 .songReqest {
     background-color: #B5B8AE;
@@ -66,6 +54,4 @@ a:hover {
 }
 .subBtn {
     float: left;
-}
-.musicName {
 }

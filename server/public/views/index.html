@@ -9,17 +9,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/vendor/angular/angular.min.js" type="text/javascript"></script>
+    <script src="/vendor/colorpicker/bootstrap-colorpicker-module.js" type="text/javascript"></script>
     <script src="/assets/scripts/app.min.js" type="text/javascript"></script>
 </head>
 <body ng-repeat="style in styles | reverse | limitTo:1" style="background-color:{{style.background}}; color:{{style.text}}">
 <section>
-    <ul class="text-center container" ng-init="tab = 1">
-        <li ng-class="{active:tab===1}" class="pill" style="background-color:{{style.button}}">
+    <div class="text-center container" ng-init="tab = 1">
+        <button ng-class="{active:tab===1}" class="btn btn-wed btn-sm" style="background-color:{{style.button}}">
             <a ng-click="tab = 1">Request</a>
-        </li>
-        <li ng-class="{active:tab===2}" class="pill" style="background-color:{{style.button}}">
+        </button>
+        <button ng-class="{active:tab===2}" class="btn btn-wed btn-sm" style="background-color:{{style.button}}">
             <a ng-click="tab = 2">Search</a>
-        </li>
+        </button>
         <div ng-show="tab === 1">
             <div class="well" style="background-color:{{style.subBackground}}">
                 <h3 id="header1">Mr. & Mrs. {{style.wedding}}</h3>
@@ -55,7 +56,7 @@
                 </div>
             </div>
         </div>
-    </ul>
+    </div>
 </section>
 
 </body>

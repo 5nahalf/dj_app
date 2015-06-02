@@ -17,7 +17,7 @@
     background-color: #1B1B1B;
     padding: 5px 19px;
     margin: 5px 2px 5px 0px;
-    color: #DDDDDD;
+    color: #EECE33;
     list-style: none;
     border: solid 1px #585858;
     border-radius: 5px;
@@ -28,6 +28,13 @@ body {
 }
 .btn {
     background-color: #1B1B1B;
+    border: solid 1px #585858;
+    color: #EECE33;
+}
+.btn:hover{
+    background-color: #1B1B1B;
+    border: solid 1px #585858;
+    color: #373835;
 }
 
 a {
