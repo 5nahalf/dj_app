@@ -7,23 +7,22 @@
     <link rel="stylesheet" href="/views/css/stylesheetadmin.css">
 </head>
 <title>DJ Request Admin</title>
-</head>
 <body>
 <section>
     <ul ng-init="tab = 1">
         <li ng-class="{active:tab===1}" class="pill">
-            <a href ng-click="tab = 1">Home</a>
+            <a ng-click="tab = 1">Home</a>
         </li>
         <li ng-class="{active:tab===2}" class="pill">
-            <a href ng-click="tab = 2">Style</a>
+            <a ng-click="tab = 2">Style</a>
         </li>
         <li ng-class="{active:tab===3}" class="pill">
-            <a href ng-click="tab = 3">Add Songs</a>
+            <a ng-click="tab = 3">Add Songs</a>
         </li>
         <li ng-class="{active:tab===4}" class="pill">
-            <a href ng-click="tab = 4">Database</a>
+            <a ng-click="tab = 4">Database</a>
         </li>
-        <br><br>
+        <br /><br />
         <div ng-show="tab === 1">
             <h4>Requests</h4>
             <ol class="requests">
@@ -33,7 +32,7 @@
             </ol>
         </div>
         <div ng-show="tab === 2">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <p>Wedding:</p><input type="text"  ng-model="style.wedding">
                 <p>Background:</p><input type="text" colorpicker ng-model="style.background">
                 <p>Sub-Background:</p><input type="text" colorpicker ng-model="style.subBackground">
@@ -41,6 +40,7 @@
                 <p>Text:</p><input type="text" colorpicker ng-model="style.text"><br /><br />
                 <button class="btn btn-wed btn-danger" type="submit" ng-click="sadd(style)" value="Save">Add style</button>
             </div>
+            <br /><br />
             <ul ng-repeat="style in styles" class="col-md-2">
                 <li>Name: {{style.wedding}}</li>
                 <li>Background: {{style.background}}</li>
