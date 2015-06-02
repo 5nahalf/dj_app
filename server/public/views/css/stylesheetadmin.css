@@ -14,22 +14,22 @@
 }
 .pill {
     float: left;
-    background-color: rgb(200, 200, 200);
+    background-color: #1B1B1B;
     padding: 5px 19px;
     margin: 5px 2px 5px 0px;
-    color: black;
+    color: #DDDDDD;
     list-style: none;
 }
 body {
-    background-color: #373835;
-    color: #999999;
+    background-color: #0F0F0F;
+    color: #EECE33;
 }
 .btn {
-    background-color: #444444;
+    background-color: #1B1B1B;
 }
 a {
     text-decoration: none;
-    color: #373835;
+    color: #EECE33;
 }
 a:hover {
     text-decoration: none;
