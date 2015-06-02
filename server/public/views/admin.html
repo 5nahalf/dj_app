@@ -27,7 +27,7 @@
             <h4>Requests</h4>
             <ol class="requests">
                 <li class="col-md-4" ng-repeat="cat in cats | unique: 'name'">
-                    <button ng-click="remove(cat)" class="btn btn-md btn-danger">Remove: {{cat.name}}</button>
+                    <button ng-click="remove(cat)" class="btn btn-md btn-warning">Remove: {{cat.name}}</button>
                 </li>
             </ol>
         </div>
@@ -38,7 +38,7 @@
                 <p>Sub-Background:</p><input type="text" colorpicker ng-model="style.subBackground">
                 <p>Buttons:</p><input type="text" colorpicker ng-model="style.button">
                 <p>Text:</p><input type="text" colorpicker ng-model="style.text"><br /><br />
-                <button class="btn btn-wed btn-danger" type="submit" ng-click="sadd(style)" value="Save">Add style</button>
+                <button class="btn btn-wed btn-warning" type="submit" ng-click="sadd(style)" value="Save">Add style</button>
             </div>
             <br /><br />
             <ul ng-repeat="style in styles" class="col-md-2">
@@ -47,7 +47,7 @@
                 <li>Subbackground: {{style.subBackground}}</li>
                 <li>Buttons: {{style.button}}</li>
                 <li>Text: {{style.text}}</li>
-                <button class="btn btn-wed btn-danger" ng-click="sremove(style)">Remove Style</button>
+                <button class="btn btn-wed btn-warning" ng-click="sremove(style)">Remove Style</button>
             </ul>
         </div>
         <div ng-show="tab === 3">
@@ -55,7 +55,7 @@
                 <p>Artist:</p><input type="text" ng-model="music.name" class="requestName"><br />
                 <p>Song Name:</p><input type="text" ng-model="music.song" class="requestSong"><br />
                 <p>Lyrics:</p><textarea rows="50" cols="100" ng-model="music.lyrics" class="requestLyrics"></textarea><br />
-                <button class="btn btn-wed btn-danger" type="submit" ng-click="madd(music)" value="Save">Add song</button>
+                <button class="btn btn-wed btn-warning" type="submit" ng-click="madd(music)" value="Save">Add song</button>
             </form>
         </div>
         <div ng-show="tab === 4" class="container-fluid">
@@ -63,8 +63,8 @@
                 <label><input ng-model="searchText">Search</label>
             </div>
             <div class="col-md-4" ng-repeat="music in musics | filter:searchText | orderBy:'-play'">
-                <button ng-click="mplay(music.play = 0, music._id)" class="btn btn-danger btn-sm database">{{music.play}}</button>
-                <!--<button ng-click="mremove(music)" class="btn btn-danger btn-sm database">X</button>-->
+                <button ng-click="mplay(music.play = 0, music._id)" class="btn btn-warning btn-sm database">{{music.play}}</button>
+                <!--<button ng-click="mremove(music)" class="btn btn-warning btn-sm database">X</button>-->
                 <p class="database">Artist: {{music.name}} Song: {{music.song}}</p>
             </div>
         </div>
