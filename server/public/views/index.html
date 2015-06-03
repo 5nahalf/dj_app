@@ -24,14 +24,15 @@
         <div ng-show="tab === 1">
             <div class="well" style="background-color:{{style.subBackground}}">
                 <h3 id="header1">Mr. & Mrs. {{style.wedding}}</h3>
-                <p>Click Search to find your request!</p>
-                <!--Toggle this on to use instant request system-->
-                <!--<p class="requestName" ng-show="cat.name">Your request is: {{cat.name}}</p>-->
-                <!--<p class="requestName" ng-hide="cat.name">Enter your dance request.</p>-->
-                <!--<form novalidate>-->
-                    <!--<input type="text" ng-model="cat.name">-->
-                    <!--<button style="background-color:{{style.button}}" class="btn btn-wed btn-sm" type="submit" ng-click="add(cat)" value="Save">Request!</button>-->
-                <!--</form>-->
+                <p ng-hide="{{style.show}}">Click Search to find your request!</p>
+                <div ng-show="{{style.show}}"
+                    <p class="requestName" ng-show="cat.name">Your request is: {{cat.name}}</p>
+                    <p class="requestName" ng-hide="cat.name">Enter your dance request.</p>
+                    <form novalidate>
+                        <input type="text" ng-model="cat.name">
+                        <button style="background-color:{{style.button}}" class="btn btn-wed btn-sm" type="submit" ng-click="add(cat)" value="Save">Request!</button>
+                    </form>
+                </div>
             </div>
             <div>
                 <ul class="well" style="background-color:{{style.subBackground}}">

@@ -8,10 +8,10 @@ mongoose.connect(uriUtil.formatMongoose(uri));
 var path = require("path");
 var Cat = mongoose.model("cat", {name:String});
 var Song = mongoose.model("music", {name:String, song:String, lyrics:String, play:Number});
-var Style = mongoose.model("style", {num:Number, wedding:String, background:String, subBackground:String, button:String, text:String});
+var Style = mongoose.model("style", {num:Number, wedding:String, background:String, subBackground:String, button:String, text:String, show:String});
 
 router.post("/sadd", function(request, response, next){
-    var style = new Style({wedding: request.body.wedding, background: request.body.background, subBackground: request.body.subBackground, button: request.body.button, text:request.body.text});
+    var style = new Style({wedding: request.body.wedding, background: request.body.background, subBackground: request.body.subBackground, button: request.body.button, text:request.body.text, show:request.body.show});
     style.save(function(err){
         if(err) console.log("error %s", err);
         response.send(style.toJSON());

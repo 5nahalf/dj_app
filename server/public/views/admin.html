@@ -32,17 +32,25 @@
             </ol>
         </div>
         <div ng-show="tab === 2">
-            <div class="col-md-2">
+            <div class="styles">
                 <br />
                 <p>Wedding:</p><input type="text"  ng-model="style.wedding">
                 <p>Background:</p><input type="text" colorpicker ng-model="style.background">
                 <p>Sub-Background:</p><input type="text" colorpicker ng-model="style.subBackground">
                 <p>Buttons:</p><input type="text" colorpicker ng-model="style.button">
-                <p>Text:</p><input type="text" colorpicker ng-model="style.text"><br /><br />
+                <p>Text:</p><input type="text" colorpicker ng-model="style.text">
+                <br /><br />
+                <!--<p>Instant Request</p><input type="text"  ng-model="style.show">-->
+                <p>Instant Request:</p>
+                <select ng-model="style.show" class="showSelector">
+                    <option value="true">On</option>
+                    <option value="false">Off</option>
+                </select>
+                <br /><br />
                 <button class="btn btn-wed btn-warning" type="submit" ng-click="sadd(style)" value="Save">Add style</button>
             </div>
             <br /><br />
-            <ul ng-repeat="style in styles" class="col-md-2">
+            <ul ng-repeat="style in styles" class="stylesList">
                 <li>Name: {{style.wedding}}</li>
                 <li>Background: {{style.background}}</li>
                 <li>Subbackground: {{style.subBackground}}</li>
