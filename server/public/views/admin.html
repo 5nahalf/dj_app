@@ -10,18 +10,10 @@
 <body>
 <section>
     <div ng-init="tab = 1">
-        <button ng-class="{active:tab===1}" class="pill">
-            <a ng-click="tab = 1">Home</a>
-        </button>
-        <button ng-class="{active:tab===2}" class="pill">
-            <a ng-click="tab = 2">Style</a>
-        </button>
-        <button ng-class="{active:tab===3}" class="pill">
-            <a ng-click="tab = 3">Add Songs</a>
-        </button>
-        <button ng-class="{active:tab===4}" class="pill">
-            <a ng-click="tab = 4">Database</a>
-        </button>
+        <button ng-class="{active:tab===1}" class="pill" ng-click="tab = 1">Home</button>
+        <button ng-class="{active:tab===2}" class="pill" ng-click="tab = 2">Style</button>
+        <button ng-class="{active:tab===3}" class="pill" ng-click="tab = 3">Add Songs</button>
+        <button ng-class="{active:tab===4}" class="pill" ng-click="tab = 4">Database</button>
         <br /><br />
         <div ng-show="tab === 1">
             <h4>Requests</h4>

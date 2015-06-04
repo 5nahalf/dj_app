@@ -15,12 +15,8 @@
 <body ng-repeat="style in styles | reverse | limitTo:1" style="background-color:{{style.background}}; color:{{style.text}}">
 <section>
     <div class="text-center container" ng-init="tab = 1">
-        <button ng-class="{active:tab===1}" class="btn btn-wed btn-sm" style="background-color:{{style.button}}">
-            <a ng-click="tab = 1">Current Requests</a>
-        </button>
-        <button ng-class="{active:tab===2}" class="btn btn-wed btn-sm" style="background-color:{{style.button}}">
-            <a ng-click="tab = 2">Search/Request</a>
-        </button>
+        <button ng-class="{active:tab===1}" class="btn btn-wed btn-sm" style="background-color:{{style.button}}" ng-click="tab = 1">Current Requests</button>
+        <button ng-class="{active:tab===2}" class="btn btn-wed btn-sm" style="background-color:{{style.button}}" ng-click="tab = 2">Search/Request</button>
         <div ng-show="tab === 1">
             <div class="well" style="background-color:{{style.subBackground}}">
                 <h3 id="header1">Mr. & Mrs. {{style.wedding}}</h3>
