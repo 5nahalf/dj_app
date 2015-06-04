@@ -9,7 +9,7 @@
 <title>DJ Request Admin</title>
 <body>
 <section>
-    <ul ng-init="tab = 1">
+    <div ng-init="tab = 1">
         <button ng-class="{active:tab===1}" class="pill">
             <a ng-click="tab = 1">Home</a>
         </button>
@@ -32,23 +32,37 @@
             </ol>
         </div>
         <div ng-show="tab === 2">
-            <div class="styles">
-                <br />
-                <p>Wedding:</p><input type="text"  ng-model="style.wedding">
-                <p>Background:</p><input type="text" colorpicker ng-model="style.background">
-                <p>Sub-Background:</p><input type="text" colorpicker ng-model="style.subBackground">
-                <p>Buttons:</p><input type="text" colorpicker ng-model="style.button">
-                <p>Text:</p><input type="text" colorpicker ng-model="style.text">
-                <br /><br />
+            <ul class="styles">
+                <li>
+                    <!--<p>Wedding:</p>-->
+                    <input type="text"  ng-model="style.wedding" placeholder="Wedding Party">
+                </li>
+                <li>
+                    <!--<p>Background:</p>-->
+                    <input type="text" colorpicker ng-model="style.background" placeholder="Background Color">
+                </li>
+                <li>
+                    <!--<p>Sub-Background:</p>-->
+                    <input type="text" colorpicker ng-model="style.subBackground" placeholder="Sub-Background Color">
+                </li>
+                <li>
+                    <!--<p>Buttons:</p>-->
+                    <input type="text" colorpicker ng-model="style.button" placeholder="Button Color">
+                </li>
+                <li>
+                    <!--<p>Text:</p>-->
+                    <input type="text" colorpicker ng-model="style.text" placeholder="Text Color">
+                </li>
                 <!--<p>Instant Request</p><input type="text"  ng-model="style.show">-->
-                <p>Instant Request:</p>
-                <select ng-model="style.show" class="showSelector">
-                    <option value="true">On</option>
-                    <option value="false">Off</option>
-                </select>
-                <br /><br />
-                <button class="btn btn-wed btn-warning" type="submit" ng-click="sadd(style)" value="Save">Add style</button>
-            </div>
+                <li>
+                    <!--<p>Instant Request:</p>-->
+                    <select ng-model="style.show" class="showSelector">
+                        <option value="true">Turn Instant Request On</option>
+                        <option value="false">Turn Instant Request Off</option>
+                    </select>
+                </li>
+                <li><button class="btn btn-wed btn-warning" type="submit" ng-click="sadd(style)" value="Save">Add style</button></li>
+            </ul>
             <br /><br />
             <ul ng-repeat="style in styles" class="stylesList">
                 <li>Name: {{style.wedding}}</li>
@@ -61,24 +75,38 @@
         </div>
         <div ng-show="tab === 3">
             <form novalidate>
-                <br />
-                <p>Artist:</p><input type="text" ng-model="music.name" class="requestName"><br />
-                <p>Song Name:</p><input type="text" ng-model="music.song" class="requestSong"><br />
-                <p>Lyrics:</p><textarea rows="50" cols="100" ng-model="music.lyrics" class="requestLyrics"></textarea><br />
-                <button class="btn btn-wed btn-warning" type="submit" ng-click="madd(music)" value="Save">Add song</button>
+                <ul>
+                    <li>
+                        <!--<label for="Artist">Artist:</label>-->
+                        <input id="Artist" type="text" ng-model="music.name" class="requestName" placeholder="Artist">
+                    </li>
+                    <li>
+                        <!--<label for="Song">Song Name:</label>-->
+                        <input id="Song" type="text" ng-model="music.song" class="requestSong" placeholder="Song Name">
+                    </li>
+                    <li>
+                        <!--<label for="Lyrics">Lyrics:</label>-->
+                        <textarea id="Lyrics" rows="50" cols="100" ng-model="music.lyrics" class="requestLyrics" placeholder="Lyrics"></textarea>
+                    </li>
+                    <li>
+                        <button class="btn btn-wed btn-warning" type="submit" ng-click="madd(music)" value="Save">Add song</button>
+                    </li>
+                </ul>
             </form>
         </div>
         <div ng-show="tab === 4" class="container-fluid">
-            <div class="col-md-4">
-                <label><input ng-model="searchText">Search</label>
-            </div>
+            <ul class="col-md-12">
+                <li>
+                    <input ng-model="searchText" placeholder="Search">
+                </li>
+            </ul>
             <div class="col-md-4" ng-repeat="music in musics | filter:searchText | orderBy:'-play'">
-                <button ng-click="mplay(music.play = 0, music._id)" class="btn btn-warning btn-sm database">{{music.play}}</button>
-                <!--<button ng-click="mremove(music)" class="btn btn-warning btn-sm database">X</button>-->
-                <p class="database">Artist: {{music.name}} Song: {{music.song}}</p>
+                    <button ng-click="mplay(music.play = 0, music._id)" class="btn btn-warning btn-sm database">{{music.play}}</button>
+                    <!--<button ng-click="mremove(music)" class="btn btn-warning btn-sm database">X</button>-->
+                    <p class="database">Artist: {{music.name}} Song: {{music.song}}</p>
             </div>
         </div>
-    </ul>
+    </div>
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

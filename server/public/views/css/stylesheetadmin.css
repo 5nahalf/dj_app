@@ -216,7 +216,12 @@ colorpicker-preview {
 }
 .database {
     display: inline-block;
+
 }
 .showSelector{
     width: 150px;
+}
+li {
+    padding: 5px;
+    list-style-type: none;
 }

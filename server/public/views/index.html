@@ -16,10 +16,10 @@
 <section>
     <div class="text-center container" ng-init="tab = 1">
         <button ng-class="{active:tab===1}" class="btn btn-wed btn-sm" style="background-color:{{style.button}}">
-            <a ng-click="tab = 1">Request</a>
+            <a ng-click="tab = 1">Current Requests</a>
         </button>
         <button ng-class="{active:tab===2}" class="btn btn-wed btn-sm" style="background-color:{{style.button}}">
-            <a ng-click="tab = 2">Search</a>
+            <a ng-click="tab = 2">Search/Request</a>
         </button>
         <div ng-show="tab === 1">
             <div class="well" style="background-color:{{style.subBackground}}">
@@ -35,19 +35,18 @@
                 </div>
             </div>
             <div>
-                <ul class="well" style="background-color:{{style.subBackground}}">
+                <div class="well" style="background-color:{{style.subBackground}}">
                     <p class=" requests">Current Requests</p>
                     <div ng-repeat="cat in cats | unique: 'name'">
                         <p class="">{{cat.name}}</p>
                     </div>
-                </ul>
+                </div>
             </div>
         </div>
         <div ng-show="tab === 2">
             <div class="well text-center" style="background-color:{{style.subBackground}}">
-                <h3 id="header2">Search</h3>
                 <p class="requestName">Search by name, artist, or lyrics.</p>
-                <label><input ng-model="searchText"></label>
+                <label><input ng-model="searchText" placeholder="Search"></label>
             </div>
             <div class="well text-center" style="background-color:{{style.subBackground}}">
                 <h4>Top 50 most requested songs</h4>
