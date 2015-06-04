@@ -46,7 +46,7 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     };
     $scope.mplay = function(data, id){
         var play = {"play": data};
-        alert('thank you for your request');
+        alert("Thank you for your request!");
         return $http.put('/' + id, play).then(fetchMusic);
     };
     fetchMusic();
