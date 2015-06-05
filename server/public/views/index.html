@@ -19,7 +19,7 @@
         <button ng-class="{active:tab===2}" class="btn btn-wed btn-sm" style="background-color:{{style.button}}" ng-click="tab = 2">Search/Request</button>
         <div ng-show="tab === 1">
             <div class="well" style="background-color:{{style.subBackground}}">
-                <h3 id="header1">Mr. & Mrs. {{style.wedding}}</h3>
+                <h3 id="header1">{{style.wedding}}</h3>
                 <p ng-hide="{{style.show}}">Click Search/Request to find your song!</p>
                 <div ng-show="{{style.show}}"
                     <p class="requestName">Enter your dance request.</p>
