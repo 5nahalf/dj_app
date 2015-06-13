@@ -20,8 +20,9 @@
         <div ng-show="tab === 1">
             <div class="well" style="background-color:{{style.subBackground}}">
                 <h3 id="header1">{{style.wedding}}</h3>
-                <p ng-hide="{{style.show}}">Click Search/Request to find your song!</p>
-                <div ng-show="{{style.show}}"
+                <!--<p ng-hide="{{style.show}}">Click Search/Request to find your song!</p>-->
+                <p ng-hide="{{style.show}}">Still here?  shoot me a email with questions or comments <a href="5nahalf@comcast.net">5nahalf@comcast.net</a></p>
+                <div ng-show="{{style.show}}">
                     <p class="requestName">Enter your dance request.</p>
                     <form novalidate>
                         <input type="text" ng-model="cat.name">
