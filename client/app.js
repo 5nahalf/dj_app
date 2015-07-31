@@ -24,7 +24,7 @@ app.controller("IndexController", ["$scope", "$http", function($scope, $http){
     };
 
     fetchCats();
-
+//I need to get sockets working in the admin side to get real time updates on requests.
 
     $scope.music = {};
     $scope.musics = [];
