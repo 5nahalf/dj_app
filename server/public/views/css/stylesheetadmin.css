@@ -225,3 +225,7 @@ li {
     padding: 5px;
     list-style-type: none;
 }
+select{
+    color: black;
+    width: 150px;
+}
