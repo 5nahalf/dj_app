@@ -8,9 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
     <body>
-    <!--<h1>Enjoy the music?</h1>-->
-    <!--<h2>If you're interested in hiring me, shoot me a email at <a href="mailto:5nahalf@comcast.net">5nahalf@comcast.net</a></h2>-->
-
         <div ng-repeat="style in styles | reverse | limitTo:1" style="background-color:{{style.background}}; color:{{style.text}}">
             <section class="rick">
                 <div class="text-center container" ng-init="tab = 1">
@@ -20,7 +17,6 @@
                         <div class="well" style="background-color:{{style.subBackground}}">
                             <h3 id="header1">{{style.wedding}}</h3>
                             <p ng-hide="{{style.show}}">Click Search/Request to find your song!</p>
-                            <!--<p ng-hide="{{style.show}}">Still here?  shoot me a email with questions or comments <a href="mailto:5nahalf@comcast.net">5nahalf@comcast.net</a></p>-->
                             <div ng-show="{{style.show}}">
                                 <p class="requestName">Enter your dance request.</p>
                                 <form novalidate>
